@@ -37,7 +37,7 @@ Route::get('/contact', function () {
 Route::get('/admin', function () {
     return view('admin.layout.admin');
 })->name('admin');
-Route::get('/admin/dashboard', function () {
-    return view('admin.app');
+Route::get('/admin/app', function () {
+    return view('admin.pages.app');
 });
 

@@ -231,12 +231,7 @@
                                 aliqua.
                             </p>
                             <p class="u-text u-text-black u-text-default u-text-4">
-                                Image by
-                                <a
-                                    href="https://www.freepik.com/free-photos-vectors/music"
-                                    class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-color u-btn-1"
-                                >Freepik</a
-                                >
+
                             </p>
                             <a
                                 href="{{route('about')}}"
@@ -497,14 +492,7 @@
                                     sint occaecat cupidatat non proident, sunt in culpa qui
                                     officia deserunt mollit anim id est laborum.
                                 </p>
-                                <p class="u-text u-text-default u-text-3">
-                                    Images from
-                                    <a
-                                        href="https://freepik.com/photos/people"
-                                        class="u-active-none u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1"
-                                    >Freepik</a
-                                    >
-                                </p>
+
                                 <a
                                     href="{{route('blog')}}"
                                     data-page-id="202909025"
@@ -569,14 +557,7 @@
                                 data-image-width="1543"
                                 data-image-height="1080"
                             />
-                            <p class="u-text u-text-black u-text-3">
-                                Images by
-                                <a
-                                    href="https://www.freepik.com/free-photos-vectors/music"
-                                    class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-color u-btn-1"
-                                >Freepik</a
-                                >
-                            </p>
+
                         </div>
                     </div>
                     <div
@@ -642,13 +623,7 @@
                     Rhoncus dolor purus non enim praesent elementum facilisis leo.
                 </p>
                 <p class="u-text u-text-default u-text-3">
-                    Image from
-                    <a
-                        href="https://www.freepik.com/photos/people"
-                        class="u-active-none u-border-1 u-border-active-palette-1-base u-border-grey-75 u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1"
-                        target="_blank"
-                    >Freepik</a
-                    >
+
                 </p>
                 <a
                     href="{{route('courses')}}"
@@ -705,14 +680,6 @@
                                 ultrices mi tempus imperdiet. Sapien pellentesque habitant
                                 morbi tristique senectus et netus. Id cursus metus aliquam
                                 eleifend mi in. Quis commodo odio aenean sed.
-                            </p>
-                            <p class="u-text u-text-black u-text-default u-text-4">
-                                Image by
-                                <a
-                                    href="https://www.freepik.com/free-photos-vectors/music"
-                                    class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-color u-btn-1"
-                                >Freepik</a
-                                >
                             </p>
                         </div>
                     </div>

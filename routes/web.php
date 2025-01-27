@@ -34,3 +34,10 @@ Route::get('/courses', function () {
 Route::get('/contact', function () {
     return view('front.contact');
 })->name('contact');
+Route::get('/admin', function () {
+    return view('admin.layout.admin');
+})->name('admin');
+Route::get('/admin/dashboard', function () {
+    return view('admin.app');
+});
+

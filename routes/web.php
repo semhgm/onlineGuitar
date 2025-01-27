@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminPageController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,31 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-Route::get('/index', function () {
-    return view('front.index');
-})->name('index');
-Route::get('/about', function () {
-    return view('front.about');
-})->name('about');
-Route::get('/services', function () {
-    return view('front.services');
-})->name('services');
-Route::get('/blog', function () {
-    return view('front.blog');
-})->name('blog');
-Route::get('/courses', function () {
-    return view('front.courses');
-})->name('courses');
-Route::get('/contact', function () {
-    return view('front.contact');
-})->name('contact');
-Route::get('/admin', function () {
-    return view('admin.layout.admin');
-})->name('admin');
-Route::get('/admin/app', function () {
-    return view('admin.pages.app');
-});
 
+
+
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/services', [PageController::class, 'services'])->name('services');
+Route::get('/blog', [PageController::class, 'blog'])->name('blog');
+Route::get('/courses', [PageController::class, 'courses'])->name('courses');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/app', [AdminPageController::class, 'app'])->name('admin.app');
+});

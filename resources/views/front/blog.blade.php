@@ -246,7 +246,7 @@
                         <a
                             href="blog/gönderi-5.html"
                             class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-1"
-                        ><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<!-- - blog_post_readmore_content --->
+                        ><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<-- - blog_post_readmore_content --->
                             Daha Fazlasını Okuyun
                             <!-- - / blog_post_readmore_content --->","defaultValue":"Devamını
                             Oku"}--&gt;<!--/options_json--><!-- - blog_post_readmore_content --->
@@ -288,7 +288,7 @@
                         <a
                             href="blog/gönderi-4.html"
                             class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-2"
-                        ><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<!-- - blog_post_readmore_content --->
+                        ><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<-- - blog_post_readmore_content --->
                             Daha Fazlasını Okuyun
                             <!-- - / blog_post_readmore_content --->","defaultValue":"Devamını
                             Oku"}--&gt;<!--/options_json--><!-- - blog_post_readmore_content --->
@@ -330,7 +330,7 @@
                         <a
                             href="blog/gönderi-3.html"
                             class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-3"
-                        ><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<!-- - blog_post_readmore_content --->
+                        ><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<-- - blog_post_readmore_content --->
                             Daha Fazlasını Okuyun
                             <!-- - / blog_post_readmore_content --->","defaultValue":"Devamını
                             Oku"}--&gt;<!--/options_json--><!-- - blog_post_readmore_content --->

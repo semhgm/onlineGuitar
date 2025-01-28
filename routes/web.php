@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminContactController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPageController;
+use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +32,8 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/app', [AdminPageController::class, 'app'])->name('admin.app');
+    Route::get('/about', [AdminPageController::class, 'about'])->name('admin.about');
+    Route::get('/services', [AdminServiceController::class, 'services'])->name('admin.services');
+    Route::get('/blog', [AdminBlogController::class, 'blog'])->name('admin.blog');
+    Route::get('/contact', [AdminContactController::class, 'contact'])->name('admin.contact');
 });

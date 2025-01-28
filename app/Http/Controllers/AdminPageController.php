@@ -10,4 +10,8 @@ class AdminPageController extends Controller
     {
         return view('admin.pages.app');
     }
+    public function about()
+    {
+        return view('admin.pages.about');
+    }
 }

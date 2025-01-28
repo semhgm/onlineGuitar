@@ -8,13 +8,13 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                <a href="{{route('admin.dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Anasayfa</span></a></li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Hakkımda</span></a></li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Hizmetler</span></a></li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Blog</span></a></li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>İletişim</span></a></li>
+            <li><a class="nav-link" href="{{route('admin.app')}}"><i data-feather="file"></i><span>Anasayfa</span></a></li>
+            <li><a class="nav-link" href="{{route('admin.about')}}"><i data-feather="file"></i><span>Hakkımda</span></a></li>
+            <li><a class="nav-link" href="{{route('admin.services')}}"><i data-feather="file"></i><span>Hizmetler</span></a></li>
+            <li><a class="nav-link" href="{{route('admin.blog')}}"><i data-feather="file"></i><span>Blog</span></a></li>
+            <li><a class="nav-link" href="{{route('admin.contact')}}"><i data-feather="file"></i><span>İletişim</span></a></li>
         </ul>
     </aside>
 </div>

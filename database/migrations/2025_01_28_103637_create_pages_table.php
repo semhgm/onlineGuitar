@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('title'); // Sayfa başlığı
-            $table->string('slug')->unique(); // URL dostu isim
             $table->text('content'); // Sayfa içeriği
             $table->timestamps();
         });

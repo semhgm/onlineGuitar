@@ -15,6 +15,8 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{asset('./otika/assets/css/custom.css')}}">
     <link rel='shortcut icon' type='image/x-icon' href='{{asset('./otika/assets/img/favicon.ico')}}' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -202,6 +204,7 @@
     </div>
 </div>
 <!-- General JS Scripts -->
+
 <script src="{{asset('./otika/assets/js/app.min.js')}}"></script>
 <!-- JS Libraies -->
 <script src="{{asset('./otika/assets/bundles/apexcharts/apexcharts.min.js')}}"></script>
@@ -211,6 +214,12 @@
 <script src="{{asset('./otika/assets/js/scripts.js')}}"></script>
 <!-- Custom JS File -->
 <script src="{{asset('./otika/assets/js/custom.js')}}"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 

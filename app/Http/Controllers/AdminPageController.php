@@ -17,52 +17,39 @@ class AdminPageController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
-        ]);
-
-        $page = new Page(); // Page modeli üzerinden işlem yapıyoruz
-        $page->title = $request->title;
-        $page->content = $request->content;
-        $page->save();
-
-        return response()->json(['message' => 'Sayfa eklendi!']);
-    }
-
 
     public function edit($id)
     {
-        $page = Page::findOrFail($id); // ID ile Page modelini buluyoruz
-        return response()->json($page);
+        $page = Page::find($id); // İlgili id'ye sahip sayfayı buluyoruz
+        if (!$page) {
+            return redirect()->route('pages.index')->with('error', 'Sayfa bulunamadı.');
+        }
+
+        return view('admin.pages.update', compact('page')); // 'update.blade.php' görünümüne sayfa verisini gönderiyoruz
     }
+
 
 
     public function update(Request $request, $id)
     {
+        $page = Page::find($id);
+
+        if (!$page) {
+            return redirect()->route('admin.pages.index')->with('error', 'Sayfa bulunamadı.');
+        }
+
+        // Verileri validasyon ile güncelleyelim
         $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'content' => 'required',
         ]);
 
-        $page = Page::findOrFail($id); // Hedef Page kaydını buluyoruz
-        $page->title = $request->title;
-        $page->content = $request->content;
+        $page->title = $request->input('title');
+        $page->content = $request->input('content');
         $page->save();
 
-        return response()->json(['message' => 'Sayfa güncellendi!']);
+        return redirect()->route('admin.pages.index')->with('success', 'Sayfa başarıyla güncellendi.');
     }
-
-
-    public function destroy($id)
-    {
-        Page::destroy($id); // ID'sine göre Page kaydını siliyoruz
-        return response()->json(['message' => 'Sayfa silindi!']);
-    }
-
-
     public function app()
     {
         return view('admin.pages.app');
@@ -71,5 +58,6 @@ class AdminPageController extends Controller
     {
         return view('admin.pages.about');
     }
+
 
 }

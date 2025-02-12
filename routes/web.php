@@ -39,10 +39,10 @@ Route::prefix('admin')->group(function () {
 
     // Page işlemleri
     Route::get('/pages/app', [AdminPageController::class, 'index'])->name('admin.pages.index');
-    Route::post('/pages/store', [AdminPageController::class, 'store'])->name('admin.pages.store');
-    Route::get('/pages/edit/{id}', [AdminPageController::class, 'edit'])->name('admin.pages.edit'); // POST yerine GET
-    Route::post('/pages/update/{id}', [AdminPageController::class, 'update'])->name('admin.pages.update'); // Update Metodu
-    Route::delete('/pages/delete/{id}', [AdminPageController::class, 'destroy'])->name('admin.pages.destroy'); // Destroy Metodu
+    Route::get('/pages/{id}/edit', [AdminPageController::class, 'edit'])->name('admin.pages.edit'); // POST yerine GET
+    Route::put('/pages/update/{id}', [AdminPageController::class, 'update'])->name('admin.pages.update'); // Update Metodu
+
+
 
 
 

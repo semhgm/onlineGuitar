@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+
     <title>Otika - Admin Dashboard Template</title>
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="{{asset('./otika/assets/css/app.min.css')}}">
+   <link rel="stylesheet" href="{{asset('./otika/assets/css/app.min.css')}}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{asset('./otika/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('./otika/assets/css/components.css')}}">
@@ -216,6 +217,9 @@
 <script src="{{asset('./otika/assets/js/custom.js')}}"></script>
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

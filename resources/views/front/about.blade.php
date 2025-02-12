@@ -194,14 +194,22 @@
             class="u-align-center u-container-align-center u-container-style u-expanded-width u-group u-palette-1-base u-shape-rectangle u-group-1"
         >
             <div class="u-container-layout u-container-layout-1">
-                <h5 class="u-align-left u-text u-text-1">about design studio</h5>
-                <h1 class="u-align-left u-text u-text-default u-text-2">
-                    We have developed more than 300 professional, customer converting,
-                    mobile friendly websites.
-                </h1>
-                <p class="u-align-left u-text u-text-3">
-                    contact: +1 777 000 0000 / email / facebook&nbsp; <br />
-                </p>
+
+                @if($AboutMe)
+                    <h5 class="u-align-left u-text u-text-1">{{$AboutMe->title}}</h5>
+                    <h1 class="u-align-left u-text u-text-default u-text-2">
+                        {{$AboutMe->content}}
+                    </h1>
+                @endif
+
+                @if($Contact)
+                        <p class="u-align-left u-text u-text-3">
+                            Bizi arayın:{{$Contact->content}} <br />
+                        </p>
+                @endif
+
+
+
             </div>
         </div>
     </div>
@@ -219,14 +227,12 @@
                         <div
                             class="u-container-layout u-valign-middle u-container-layout-1"
                         >
-                            <h2 class="u-text u-text-default u-text-1">About Us</h2>
+                            @if($AboutMe2)
+
+                            @endif
+                            <h2 class="u-text u-text-default u-text-1">{{$AboutMe2->title}}</h2>
                             <p class="u-text u-text-2">
-                                Paragraph. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Curabitur id suscipit ex. Suspendisse
-                                rhoncus laoreet purus quis elementum. Phasellus sed
-                                efficitur dolor, et ultricies sapien. Quisque fringilla sit
-                                amet dolor commodo efficitur. Aliquam et sem odio. In
-                                ullamcorper nisi nunc, et molestie ipsum iaculis sit amet.
+                                {{$AboutMe2->content}}
                             </p>
                         </div>
                     </div>
@@ -547,21 +553,21 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent1)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent1->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent1->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -580,19 +586,21 @@
                                     <div class="u-block-container u-clearfix">
                                         <!--block_header-->
                                         <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                            @if($FooterContent2)
+                                                <!--block_header-->
+                                                <h5 class="u-block-header u-text">
+                                                    <!--block_header_content-->
+                                                    {{$FooterContent2->title}}
+                                                    <!--/block_header_content-->
+                                                </h5>
+                                                <!--/block_header--><!--block_content-->
+                                                <div class="u-block-content u-text">
+                                                    <!--block_content_content-->
+                                                    {{$FooterContent2->content}}
+                                                    <!--/block_content_content-->
+                                                </div>
+                                                <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -609,19 +617,21 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
+                                        @if($FooterContent3)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent3->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent3->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                         </div>
                                         <!--/block_content-->
                                     </div>

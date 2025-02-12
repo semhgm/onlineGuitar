@@ -187,13 +187,15 @@
     id="sec-a7be"
 >
     <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-left u-text u-text-default u-title u-text-1">
-            Örnek Başlık
-        </h1>
-        <p class="u-align-left u-large-text u-text u-text-variant u-text-2">
-            Örnek yazı. Metin kutusunu seçmek için tıklayın. Metni düzenlemeye
-            başlamak için tekrar tıklayın veya çift tıklayın.
-        </p>
+        @if($Courses)
+            <h1 class="u-align-left u-text u-text-default u-title u-text-1">
+                {{$Courses->title}}
+            </h1>
+            <p class="u-align-left u-large-text u-text u-text-variant u-text-2">
+                {{$Courses->content}}
+            </p>
+        @endif
+
     </div>
 </section>
 <section class="u-clearfix u-grey-10 u-section-2" id="sec-03eb">
@@ -569,21 +571,21 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent1)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent1->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent1->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -600,21 +602,21 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent2)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent2->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent2->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -631,21 +633,21 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent3)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent3->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent3->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->

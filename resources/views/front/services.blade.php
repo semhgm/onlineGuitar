@@ -196,15 +196,16 @@
     data-image-height="855"
 >
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h5 class="u-text u-text-body-alt-color u-text-default u-text-1">
-            Hizmetlerimiz
-        </h5>
-        <h1 class="u-text u-text-white u-text-2">Profesyonel Müzik Eğitimi</h1>
-        <p class="u-text u-text-body-alt-color u-text-3">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua.
-        </p>
+        @if($ProfessionalMusicEducation)
+            <h5 class="u-text u-text-body-alt-color u-text-default u-text-1">
+                Hizmetlerimiz
+            </h5>
+            <h1 class="u-text u-text-white u-text-2">{{$ProfessionalMusicEducation->title}}</h1>
+            <p class="u-text u-text-body-alt-color u-text-3">
+                {{$ProfessionalMusicEducation->content}}
+            </p>
+        @endif
+
     </div>
 </section>
 <section

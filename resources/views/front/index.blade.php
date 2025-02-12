@@ -220,16 +220,16 @@
                                     </h5>
                                 </div>
                             </div>
+                            @if($OnlineMusicEducation)
                             <h1
                                 class="u-custom-font u-font-roboto-condensed u-text u-text-palette-1-base u-text-2"
                             >
-                                Online music education<br />
+                                {{$OnlineMusicEducation->title}}<br />
                             </h1>
                             <p class="u-text u-text-3">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua.
+                                {{ $OnlineMusicEducation->content}}
                             </p>
+                            @endif
                             <p class="u-text u-text-black u-text-default u-text-4">
 
                             </p>
@@ -237,7 +237,7 @@
                                 href="{{route('about')}}"
                                 data-page-id="6977341"
                                 class="u-border-2 u-border-palette-1-base u-btn u-button-style u-hover-palette-1-base u-none u-text-black u-text-hover-white u-btn-2"
-                            >read more</a
+                            >sayfaya git</a
                             >
                         </div>
                     </div>
@@ -437,11 +437,13 @@
             <div
                 class="u-container-layout u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1"
             >
-                <h2 class="u-text u-text-default u-text-1">What We Do</h2>
-                <p class="u-text u-text-default u-text-2">
-                    Sample text. Click to select the text box. Click again or double
-                    click to start editing the text.
-                </p>
+                @if($WhatWeDo)
+                    <h2 class="u-text u-text-default u-text-1">{{$WhatWeDo->title}}</h2>
+                    <p class="u-text u-text-default u-text-2">
+                        {{$WhatWeDo->content}}
+                    </p>
+                @endif
+
                 <a
                     href="{{route('services')}}"
                     data-page-id="18164924"
@@ -481,17 +483,20 @@
                             class="u-container-style u-layout-cell u-left-cell u-shape-rectangle u-size-60 u-white u-layout-cell-1"
                         >
                             <div class="u-container-layout u-container-layout-1">
-                                <h2
-                                    class="u-text u-text-default u-text-palette-1-base u-text-1"
-                                >
-                                    Performances &amp; Activities
-                                </h2>
-                                <p class="u-text u-text-default u-text-2">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                                    sint occaecat cupidatat non proident, sunt in culpa qui
-                                    officia deserunt mollit anim id est laborum.
-                                </p>
+
+                                @if($PerformanceAndActivities)
+                                    <h2
+                                        class="u-text u-text-default u-text-palette-1-base u-text-1"
+                                    >
+                                        {{$PerformanceAndActivities->title}}
+                                    </h2>
+                                    <p class="u-text u-text-default u-text-2">
+
+                                        {{$PerformanceAndActivities->content}}
+                                    </p>
+
+                                @endif
+
 
                                 <a
                                     href="{{route('blog')}}"
@@ -534,22 +539,18 @@
                         <div
                             class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1"
                         >
-                            <h6
-                                class="u-align-justify u-custom-font u-font-montserrat u-text u-text-1"
-                            >
-                                mission
-                            </h6>
+                            @if($Mission)
+                                <h6
+                                    class="u-align-justify u-custom-font u-font-montserrat u-text u-text-1"
+                                >
+                                    {{$Mission->title}}
+                                </h6>
                             <p
                                 class="u-align-justify u-custom-font u-font-montserrat u-text u-text-2"
                             >
-                                In mollis nunc sed id semper risus in hendrerit gravida.
-                                Aliquet enim tortor at auctor urna nunc id cursus. Risus at
-                                ultrices mi tempus imperdiet. Sapien pellentesque habitant
-                                morbi tristique senectus et netus. Id cursus metus aliquam
-                                eleifend mi in. Quis commodo odio aenean sed. Sollicitudin
-                                ac orci phasellus egestas tellus. Id velit ut tortor
-                                pretium.
+                                {{$Mission->content}}
                             </p>
+                            @endif
                             <img
                                 class="u-image u-image-default u-image-1"
                                 src="{{asset('./site2/images/-min.jpg')}}"
@@ -573,22 +574,18 @@
                                 data-image-width="700"
                                 data-image-height="889"
                             />
+                            @if($Goals)
                             <h6
                                 class="u-align-left u-custom-font u-font-montserrat u-text u-text-4"
                             >
-                                goals
+                                {{$Goals->title}}
                             </h6>
                             <p
                                 class="u-align-justify u-custom-font u-font-montserrat u-text u-text-5"
                             >
-                                In mollis nunc sed id semper risus in hendrerit gravida.
-                                Aliquet enim tortor at auctor urna nunc id cursus. Risus at
-                                ultrices mi tempus imperdiet. Sapien pellentesque habitant
-                                morbi tristique senectus et netus. Id cursus metus aliquam
-                                eleifend mi in. Quis commodo odio aenean sed. Sollicitudin
-                                ac orci phasellus egestas tellus. Id velit ut tortor
-                                pretium.
+                                {{$Goals->content}}
                             </p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -614,14 +611,14 @@
             class="u-align-left u-container-align-left u-container-style u-expanded-width-xs u-group u-white u-group-1"
         >
             <div class="u-container-layout u-valign-middle u-container-layout-1">
+                @if($Courses)
                 <h2 class="u-text u-text-default u-text-palette-1-base u-text-1">
-                    Music School
+                    {{$Courses->title}}
                 </h2>
                 <p class="u-text u-text-2">
-                    Tristique magna sit amet purus gravida quis blandit turpis cursus.
-                    Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.
-                    Rhoncus dolor purus non enim praesent elementum facilisis leo.
+                    {{$Courses->content}}
                 </p>
+                @endif
                 <p class="u-text u-text-default u-text-3">
 
                 </p>
@@ -706,13 +703,14 @@
             class="custom-expanded u-align-center u-container-align-center u-container-style u-group u-white u-group-1"
         >
             <div class="u-container-layout u-container-layout-1">
-                <h2 class="u-text u-text-1">Contact Us</h2>
-                <p
-                    class="u-large-text u-text u-text-default u-text-variant u-text-2"
-                >
-                    Örnek büyük metin. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit nullam nunc justo sagittis suscipit ultrices.
-                </p>
+                @if($Contact)
+                    <h2 class="u-text u-text-1">{{$Contact->title}}</h2>
+                    <p
+                        class="u-large-text u-text u-text-default u-text-variant u-text-2"
+                    >
+                        {{$Contact->content}}
+                    </p>
+                @endif
                 <a
                     href="İletişim.html"
                     data-page-id="273684015"
@@ -757,8 +755,11 @@
                     </g>
                   </svg>
                 </span>
-                        <h5 class="u-text u-text-palette-1-base u-text-3">Call Us</h5>
-                        <p class="u-text u-text-4">1 (234) 567-891, 1 (234) 987-654</p>
+                        @if($CallUs)
+                            <h5 class="u-text u-text-palette-1-base u-text-3">{{$CallUs->title}}</h5>
+                            <p class="u-text u-text-4">{{$CallUs->content}}</p>
+                        @endif
+
                     </div>
                 </div>
                 <div
@@ -795,10 +796,13 @@
                     </g>
                   </svg>
                 </span>
-                        <h5 class="u-text u-text-palette-1-base u-text-5">Location</h5>
-                        <p class="u-text u-text-6">
-                            121 Rock Sreet, 21 Avenue, New York, NY 92103-9000
-                        </p>
+                        @if($Adress)
+                            <h5 class="u-text u-text-palette-1-base u-text-5">{{$Adress->title}}</h5>
+                            <p class="u-text u-text-6">
+                                {{$Adress->content}}
+                            </p>
+                        @endif
+
                     </div>
                 </div>
                 <div
@@ -833,12 +837,15 @@
                     </g>
                   </svg>
                 </span>
-                        <h5 class="u-text u-text-palette-1-base u-text-7">
-                            Business Hours
-                        </h5>
-                        <p class="u-text u-text-8">
-                            Mon – Fri …… 10 am – 8 pm, Sat, Sun ....… Closed
-                        </p>
+                        @if($BusinessHours)
+                            <h5 class="u-text u-text-palette-1-base u-text-7">
+                                {{$BusinessHours->title}}
+                            </h5>
+                            <p class="u-text u-text-8">
+                                {{$BusinessHours->content}}
+                            </p>
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -862,21 +869,22 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
+                                        @if($FooterContent1)
                                         <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent1->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent1->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -893,21 +901,22 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent2)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent2->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent2->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -924,21 +933,21 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent3)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent3->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent3->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->

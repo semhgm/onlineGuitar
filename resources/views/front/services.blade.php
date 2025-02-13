@@ -286,77 +286,7 @@
                         />
                     </div>
                 </div>
-                <div
-                    class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-4"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4"
-                    >
-                        <h6 class="u-align-center-sm u-align-center-xs u-text u-text-8">
-                            Piyano Dersleri
-                        </h6>
-                        <p class="u-text u-text-default u-text-9">
-                            Başlangıçtan orta seviyeye nota bilgisi ile beraber piyano
-                            eğitimi vermekteyim <br />
-                            <br />
-                        </p>
-                        <img
-                            class="u-image u-image-round u-radius u-image-4"
-                            src="https://pixabay.com/get/g71490ea2e788641d45fddef74b24731be5a06bc104647735578b8be75998a6410f91839f46e42f95f99571e0a9cfc2a32c763dffb2c378780d79f74dd0c5f12f_1280.jpg"
-                            alt=""
-                            data-image-width="1280"
-                            data-image-height="855"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-5"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom u-container-layout-5"
-                    >
-                        <h6
-                            class="u-align-center-sm u-align-center-xs u-text u-text-10"
-                        >
-                            gitar dersleri gitar dersleri
-                        </h6>
-                        <p class="u-text u-text-default u-text-11">
-                            gitar dersleri gitar dersleri ​gitar dersleri gitar dersleri
-                            ​gitar dersleri gitar dersleri ​gitar dersleri gitar dersleri
-                        </p>
-                        <img
-                            class="u-image u-image-round u-radius u-image-5"
-                            src="https://pixabay.com/get/g00859f7bddb6e8b62ab32d1ce9f282790e9419641b8553325afb21f6b4f107946f86d7797ec05ae3c04aeb29d5045eac74ff044fe078163c6804faf884a7342a_1280.jpg"
-                            alt=""
-                            data-image-width="1280"
-                            data-image-height="720"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-6"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom u-container-layout-6"
-                    >
-                        <h6
-                            class="u-align-center-sm u-align-center-xs u-text u-text-12"
-                        >
-                            gitar dersleri gitar dersleri
-                        </h6>
-                        <p class="u-text u-text-default u-text-13">
-                            gitar dersleri gitar dersleri ​gitar dersleri gitar dersleri
-                            ​gitar dersleri gitar dersleri ​gitar dersleri gitar dersleri
-                        </p>
-                        <img
-                            class="u-image u-image-round u-radius u-image-6"
-                            src="https://pixabay.com/get/g00859f7bddb6e8b62ab32d1ce9f282790e9419641b8553325afb21f6b4f107946f86d7797ec05ae3c04aeb29d5045eac74ff044fe078163c6804faf884a7342a_1280.jpg"
-                            alt=""
-                            data-image-width="1280"
-                            data-image-height="720"
-                        />
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

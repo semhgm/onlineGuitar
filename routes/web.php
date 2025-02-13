@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
+//sayfalara yönlendiriyor
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
@@ -29,6 +27,7 @@ Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/courses', [PageController::class, 'courses'])->name('courses');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
+//admin sayfalarına yönlendiriyor
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/app', [AdminPageController::class, 'index'])->name('admin.app');
@@ -36,7 +35,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/services', [AdminServiceController::class, 'services'])->name('admin.services');
     Route::get('/blog', [AdminBlogController::class, 'blog'])->name('admin.blog');
     Route::get('/contact', [AdminContactController::class, 'contact'])->name('admin.contact');
-
     // Page işlemleri
     Route::get('/pages/app', [AdminPageController::class, 'index'])->name('admin.pages.index');
     Route::get('/pages/{id}/edit', [AdminPageController::class, 'edit'])->name('admin.pages.edit'); // POST yerine GET

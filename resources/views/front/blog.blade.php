@@ -1,6 +1,64 @@
 <!DOCTYPE html>
 <html style="font-size: 16px" lang="tr">
 <head>
+    <style>
+        .u-blog {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Kartları ortala */
+            gap: 20px; /* Kartlar arasındaki boşluğu belirle */
+            max-width: 1200px; /* Blog alanını genişlet */
+            margin: auto; /* Sayfa ortasına al */
+        }
+
+        .u-blog-post {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .u-blog-post:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .u-blog-post img {
+            width: 100%;
+            height: 220px; /* Sabit yükseklik ver */
+            object-fit: cover; /* Resmin düzgün görünmesini sağla */
+            display: block;
+        }
+
+        .u-container-layout {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .u-post-header-link {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .u-btn {
+            display: block;
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+            width: 90%;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+        }
+
+        .u-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta
@@ -204,134 +262,43 @@
 
     </div>
 </section>
-<section
-    class="u-align-center u-clearfix u-container-align-center u-section-2"
-    id="carousel_83a0"
->
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
-        <div class="u-blog u-blog-1">
-            <div class="u-list-control"></div>
-            <div class="u-repeater u-repeater-1">
-                <!--blog_post-->
-                <div class="u-blog-post u-repeater-item">
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1"
-                    >
-                        <a class="u-post-header-link" href="blog/gönderi-5.html"
-                        ><!--blog_post_image-->
-                            <img
-                                src="{{asset('./site2/images/8ad73f3c.jpeg')}}"
-                                alt=""
-                                class="u-blog-control u-image u-image-default u-image-1"
-                            /><!--/blog_post_image--> </a
-                        ><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text u-text-1">
-                            <a class="u-post-header-link" href="blog/gönderi-5.html"
-                            >Gönderi 6 Başlık</a
-                            >
-                        </h2>
-                        <!--/blog_post_header--><!--blog_post_content-->
-                        <div
-                            class="u-blog-control u-post-content u-text u-text-2 fr-view"
-                        >
-                            Örnek küçük metin. Lorem ipsum dolor sit amet.
-                        </div>
-                        <!--/blog_post_content--><!--blog_post_metadata-->
-                        <div class="u-blog-control u-metadata u-metadata-1">
-                            <!--blog_post_metadata_date-->
-                            <span class="u-meta-date u-meta-icon">16 Ara 2024</span
-                            ><!--/blog_post_metadata_date-->
-                        </div>
-                        <!--/blog_post_metadata--><!--blog_post_readmore-->
-                        <a
-                            href="blog/gönderi-5.html"
-                            class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<-- - blog_post_readmore_content --->
-                            Devamını Oku
+<section class="u-align-center u-clearfix u-container-align-center u-section-2">
+    <div class="u-clearfix u-sheet">
+        <div class="u-blog">
+            @forelse ($posts as $post)
+                <div class="u-blog-post">
+                    <div class="u-container-layout">
+                        @if($post->image)
+                            <a class="u-post-header-link" href="blog/gönderi-{{ $post->id }}.html">
+                                <img src="{{$post->image}}" alt="{{ $post->title }}">
                             </a>
-                    </div>
-                </div>
-                <div class="u-blog-post u-repeater-item">
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-2"
-                    >
-                        <a class="u-post-header-link" href="blog/gönderi-4.html"
-                        ><!--blog_post_image-->
-                            <img
-                                src="{{asset('./site2/images/68f64b9d.jpeg')}}"
-                                alt=""
-                                class="u-blog-control u-image u-image-default u-image-2"
-                            /><!--/blog_post_image--> </a
-                        ><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text u-text-3">
-                            <a class="u-post-header-link" href="blog/gönderi-4.html"
-                            >Gönderi 5 Başlık</a
-                            >
+                        @else
+                            <a class="u-post-header-link" href="blog/gönderi-{{ $post->id }}.html">
+                                <img src="{{ asset('default-placeholder.png') }}" alt="Varsayılan Resim">
+                            </a>
+                        @endif
+
+                        <h2>
+                            <a class="u-post-header-link" href="blog/gönderi-{{ $post->id }}.html">
+                                {{ $post->title }}
+                            </a>
                         </h2>
-                        <!--/blog_post_header--><!--blog_post_content-->
-                        <div
-                            class="u-blog-control u-post-content u-text u-text-4 fr-view"
-                        >
-                            Örnek küçük metin. Lorem ipsum dolor sit amet.
+
+                        <p>{{ Str::limit($post->content, 100, '...') }}</p>
+
+                        <div class="u-metadata">
+                            <span class="u-meta-date">Oluşturulma:
+                                {{ $post->created_at ? $post->created_at->format('d.m.Y H:i') : 'Tarih Yok' }}
+                            </span>
                         </div>
-                        <!--/blog_post_content--><!--blog_post_metadata-->
-                        <div class="u-blog-control u-metadata u-metadata-2">
-                            <!--blog_post_metadata_date-->
-                            <span class="u-meta-date u-meta-icon">16 Ara 2024</span
-                            ><!--/blog_post_metadata_date-->
-                        </div>
-                        <!--/blog_post_metadata--><!--blog_post_readmore-->
-                        <a
-                            href="blog/gönderi-5.html"
-                            class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<-- - blog_post_readmore_content --->
-                            Devamını Oku
-                        </a>
+
+                        <a href="blog/gönderi-{{ $post->id }}.html" class="u-btn">Devamını Oku</a>
                     </div>
                 </div>
-                <div class="u-blog-post u-repeater-item">
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-3"
-                    >
-                        <a class="u-post-header-link" href="blog/gönderi-3.html"
-                        ><!--blog_post_image-->
-                            <img
-                                src="{{asset('./site2/images/0fd3416c.jpeg')}}"
-                                alt=""
-                                class="u-blog-control u-image u-image-default u-image-3"
-                            /><!--/blog_post_image--> </a
-                        ><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text u-text-5">
-                            <a class="u-post-header-link" href="blog/gönderi-3.html"
-                            >Gönderi 4 Başlık</a
-                            >
-                        </h2>
-                        <!--/blog_post_header--><!--blog_post_content-->
-                        <div
-                            class="u-blog-control u-post-content u-text u-text-6 fr-view"
-                        >
-                            Örnek küçük metin. Lorem ipsum dolor sit amet.
-                        </div>
-                        <!--/blog_post_content--><!--blog_post_metadata-->
-                        <div class="u-blog-control u-metadata u-metadata-3">
-                            <!--blog_post_metadata_date-->
-                            <span class="u-meta-date u-meta-icon">16 Ara 2024</span
-                            ><!--/blog_post_metadata_date-->
-                        </div>
-                        <!--/blog_post_metadata--><!--blog_post_readmore-->
-                        <a
-                            href="blog/gönderi-5.html"
-                            class="u-blog-control u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"<-- - blog_post_readmore_content --->
-                            Devamını Oku
-                        </a>
-                    </div>
-                </div>
-                <!--/blog_post--><!--blog_post-->
-                <!--/blog_post--><!--blog_post-->
-                <!--/blog_post-->
-            </div>
-            <div class="u-list-control"></div>
+            @empty
+                <p class="u-text u-text-center">Henüz bir gönderi bulunmamaktadır.</p>
+            @endforelse
         </div>
-        <!--/blog-->
     </div>
 </section>
 

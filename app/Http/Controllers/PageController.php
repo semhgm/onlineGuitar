@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Page;
 
+use App\Models\Post;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -55,7 +56,8 @@ class PageController extends Controller
         $FooterContent1=Page::find(13);
         $FooterContent2=Page::find(14);
         $FooterContent3=Page::find(15);
-        return view('front.blog',compact('MyBlog','FooterContent1','FooterContent2','FooterContent3'));
+        $posts=Post::all();
+        return view('front.blog',compact('MyBlog','FooterContent1','FooterContent2','FooterContent3','posts'));
     }
 
     public function courses()

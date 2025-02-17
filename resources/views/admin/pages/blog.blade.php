@@ -59,7 +59,8 @@
                             <td>
                                 @if ($post->image)
                                     <img src="{{ asset('uploads/' . $post->image) }}" alt="{{ $post->title }}" style="width: 50px; height: 50px;
-                                     object-fit: cover; border-radius: 5px;">
+                                     object-fit: cover; border-radius: 5px;"
+                                    >
                                 @else
                                     Görsel Yok
                                 @endif

@@ -36,9 +36,19 @@ Route::prefix('admin')->group(function () {
     Route::get('/blog', [AdminBlogController::class, 'blog'])->name('admin.blog');
     Route::get('/contact', [AdminContactController::class, 'contact'])->name('admin.contact');
     // Page işlemleri
+    //bu kısım sayfalardaki yazıları yönettiğimiz admin sayfaları için
     Route::get('/pages/app', [AdminPageController::class, 'index'])->name('admin.pages.index');
     Route::get('/pages/{id}/edit', [AdminPageController::class, 'edit'])->name('admin.pages.edit'); // POST yerine GET
     Route::put('/pages/update/{id}', [AdminPageController::class, 'update'])->name('admin.pages.update'); // Update Metodu
+    //bu kısım ise services sayfasına hizmetleri eklediğimiz kartları yönetiyor.
+    Route::post('/services', [AdminServiceController::class, 'store'])->name('admin.services');
+    Route::get('/services/edit/{id}', [AdminServiceController::class, 'edit'])->name('services.edit');
+    Route::put('/services/update/{id}', [AdminServiceController::class, 'update'])->name('services.update');
+    Route::delete('/services/delete/{id}', [AdminServiceController::class, 'destroy'])->name('services.destroy');
+
+
+
+
 
 
 

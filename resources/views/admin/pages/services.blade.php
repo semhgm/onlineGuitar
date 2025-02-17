@@ -4,11 +4,6 @@
     <div class="container">
         <h1>Servisler</h1>
 
-        <!-- Başarı Mesajı -->
-        @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-        @endif
-
         <!-- Yeni Servis Ekle Formu -->
         <form action="{{ route('admin.services') }}" method="POST" enctype="multipart/form-data">
 

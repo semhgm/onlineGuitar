@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html style="font-size: 16px" lang="tr">
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta
@@ -218,75 +219,60 @@
         </h2>
         <div class="u-expanded-width u-list u-list-1">
             <div class="u-repeater u-repeater-1">
-                <div
-                    class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-1"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1"
-                    >
-                        <h6 class="u-align-center-sm u-align-center-xs u-text u-text-2">
-                            Piyano Dersleri
-                        </h6>
-                        <p class="u-text u-text-default u-text-3">
-                            Başlangıçtan orta seviyeye nota bilgisi ile beraber piyano
-                            eğitimi vermekteyim <br />
-                            <br />
-                        </p>
-                        <img
-                            class="u-image u-image-round u-radius u-image-1"
-                            src="{{asset('./site2/images/88641d45fddef74b24731be5a06bc104647735578b8be75998a6410f91839f46e42f95f99571e0a9cfc2a32c763dffb2c378780d79f74dd0c5f12f_1280.jpg')}}"
-                            alt=""
-                            data-image-width="1280"
-                            data-image-height="855"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-2"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2"
-                    >
-                        <h6 class="u-align-center-sm u-align-center-xs u-text u-text-4">
-                            gitar dersleri gitar dersleri
-                        </h6>
-                        <p class="u-text u-text-default u-text-5">
-                            gitar dersleri gitar dersleri ​gitar dersleri gitar dersleri
-                            ​gitar dersleri gitar dersleri ​gitar dersleri gitar dersleri
-                        </p>
-                        <img
-                            class="u-image u-image-round u-radius u-image-2"
-                            src="{{asset('./site2/images/b6e8b62ab32d1ce9f282790e9419641b8553325afb21f6b4f107946f86d7797ec05ae3c04aeb29d5045eac74ff044fe078163c6804faf884a7342a_1280.jpg')}}"
-                            alt=""
-                            data-image-width="1280"
-                            data-image-height="720"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-3"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3"
-                    >
-                        <h6 class="u-align-center-sm u-align-center-xs u-text u-text-6">
-                            Genel nota dersi ve şan eğitimi
-                        </h6>
-                        <p class="u-text u-text-default u-text-7">
-                            Genel nota dersi ve şan eğitimi<br />Genel nota dersi ve şan
-                            eğitimi​Genel nota dersi ve şan eğitimi​Genel nota dersi ve
-                            şan eğitimi
-                        </p>
-                        <img
-                            class="u-image u-image-round u-radius u-image-3"
-                            src="{{asset('./site2/images/1404646ded887c854aca5f30aafbc4b7a84b07ede9af20a6d5a76056c9df068446a18196bea9e0a075c2e999c00214e88077c5f53b0afd59b0bb95_1280.jpg')}}"
-                            alt=""
-                            data-image-width="1280"
-                            data-image-height="853"
-                        />
-                    </div>
-                </div>
+                @foreach($services as $service)
+                    <div class="u-container-align-center-sm u-container-align-center-xs u-container-style u-grey-5 u-list-item u-radius u-repeater-item u-shape-round u-list-item-1"
+                         style="margin-bottom: 20px; min-height: 450px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                         onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
 
+                        <div class="u-container-layout u-similar-container u-container-layout-1"
+                             style="padding: 20px; height: 100%; display: flex; flex-direction: column; position: relative;">
+
+                            <!-- Badge for Status/Category -->
+                            @if($service->category)
+                                <div style="position: absolute; top: 10px; right: 10px; background: #007bff; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8em;">
+                                    {{ $service->category }}
+                                </div>
+                            @endif
+
+                            <h6 class="u-align-center u-text u-text-2"
+                                style="margin-bottom: 15px; font-size: 1.2em; color: #333; transition: color 0.3s ease;">
+                                {{ $service->title }}
+                            </h6>
+
+                            @if($service->image)
+                                <div style="overflow: hidden; border-radius: 8px; margin-bottom: 15px;">
+                                    <img class="u-image u-image-round u-radius u-image-1"
+                                         src="{{asset('uploads/' . $service->image)}}"
+                                         alt="{{ $service->title}}"
+                                         style="width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s ease;">
+                                </div>
+                            @else
+                                <div style="overflow: hidden; border-radius: 8px; margin-bottom: 15px;">
+                                    <img src="https://via.placeholder.com/300x200?text=Resim+Yok"
+                                         class="u-image u-image-round u-radius u-image-1"
+                                         alt="Resim Yok"
+                                         style="width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s ease;">
+                                </div>
+                            @endif
+
+                            <p class="u-text u-text-3"
+                               style="flex-grow: 1; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
+                          line-height: 1.5; color: #666; font-size: 0.95em;">
+                                {{ Str::limit($service->content, 150, '...') }}
+                            </p>
+
+                            <!-- Read More Button -->
+                            <div class="u-align-center" style="margin-top: 15px;">
+                                <a href="#"
+                                   style="display: inline-block; padding: 8px 20px; background: #007bff; color: white;
+                              text-decoration: none; border-radius: 20px; font-size: 0.9em; transition: background 0.3s ease;">
+                                    Detayları Gör
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -888,5 +874,6 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </a>
     </p>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

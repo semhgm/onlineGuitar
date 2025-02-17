@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Page;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -44,7 +45,8 @@ class PageController extends Controller
     public function services()
     {
         $ProfessionalMusicEducation=Page::find(19);
-        return view('front.services',compact('ProfessionalMusicEducation'));
+        $services=Service::all();
+        return view('front.services',compact('ProfessionalMusicEducation','services'));
     }
 
     public function blog()

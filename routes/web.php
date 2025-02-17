@@ -45,6 +45,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/services/edit/{id}', [AdminServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/update/{id}', [AdminServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/delete/{id}', [AdminServiceController::class, 'destroy'])->name('services.destroy');
+    // bu kısım blog tarafını yönetiyor
+    Route::get('/admin/blog', [AdminBlogController::class, 'blog'])->name('admin.blog');
+    Route::post('/admin/blog/store', [AdminBlogController::class, 'store'])->name('admin.blog.store');
+    Route::delete('/admin/blog/destroy/{id}', [AdminBlogController::class, 'destroy'])->name('admin.blog.destroy');
+    Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'edit'])->name('admin.blog.edit');
+    Route::put('/admin/blog/update/{id}', [AdminBlogController::class, 'update'])->name('admin.blog.update');
+
+
 
 
 

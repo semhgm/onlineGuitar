@@ -3,23 +3,20 @@
 <head>
     <style>
         .u-blog {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Kartları ortala */
+            gap: 20px; /* Kartlar arasındaki boşluğu belirle */
+            max-width: 1200px; /* Blog alanını genişlet */
+            margin: auto; /* Sayfa ortasına al */
         }
 
         .u-blog-post {
-            width: 100%;
             background: white;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
         }
 
         .u-blog-post:hover {
@@ -59,12 +56,6 @@
 
         .u-btn:hover {
             background-color: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            .u-blog {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 
@@ -271,45 +262,14 @@
 
     </div>
 </section>
-<section class="u-align-center u-clearfix u-container-align-center u-section-2">
-    <div class="u-clearfix u-sheet">
-        <div class="u-blog">
-            @forelse ($posts as $post)
-                <div class="u-blog-post">
-                    <div class="u-container-layout">
-                        @if($post->image)
-                            <a class="u-post-header-link" href="blog/gönderi-{{ $post->id }}.html">
-                                <img src="{{asset('uploads/' . $post->image) }}" alt="{{ $post->title }}">
-                            </a>
-                        @else
-                            <a class="u-post-header-link" href="blog/gönderi-{{ $post->id }}.html">
-                                <img src="{{ asset('default-placeholder.png') }}" alt="Varsayılan Resim">
-                            </a>
-                        @endif
 
-                        <h2>
-                            <a class="u-post-header-link" href="blog/gönderi-{{ $post->id }}.html">
-                                {{ $post->title }}
-                            </a>
-                        </h2>
 
-                        <p>{{ Str::limit($post->content, 100, '...') }}</p>
 
-                        <div class="u-metadata">
-                            <span class="u-meta-date">Oluşturulma:
-                                {{ $post->created_at ? $post->created_at->format('d.m.Y H:i') : 'Tarih Yok' }}
-                            </span>
-                        </div>
 
-                        <a href="{{ route('blog.detail', $post->id) }}" class="u-btn">Devamını Oku</a>
-                    </div>
-                </div>
-            @empty
-                <p class="u-text u-text-center">Henüz bir gönderi bulunmamaktadır.</p>
-            @endforelse
-        </div>
-    </div>
-</section>
+@yield('content')
+
+
+
 
 <footer class="u-clearfix u-footer u-grey-80" id="sec-e35a">
     <div class="u-clearfix u-sheet u-sheet-1">

@@ -62,6 +62,15 @@ class PageController extends Controller
         $posts=Post::all();
         return view('front.blog',compact('MyBlog','FooterContent1','FooterContent2','FooterContent3','posts'));
     }
+    public function blogDetail($id)
+    {
+        $post=Post::findorfail($id);
+        $MyBlog=Page::find(17);
+        $FooterContent1=Page::find(11);
+        $FooterContent2=Page::find(12);
+        $FooterContent3=Page::find(13);
+        return view('front.blog_content',compact('MyBlog','FooterContent1','FooterContent2','FooterContent3','post'));
+    }
 
     public function courses()
     {

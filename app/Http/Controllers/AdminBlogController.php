@@ -19,16 +19,20 @@ class AdminBlogController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Resim validasyonu
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $data = $request->only('title', 'content');
+        $post = new Post();
+        $post->title = $request->title;
+        $post->content = $request->input('content');
 
+        // Görsel yükleme işlemi
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('uploads', 'public'); // Uploads dizinine kaydet
+            $filename = time() . '-' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('uploads'), $filename);
+            $post->image = $filename;
         }
-
-        Post::create($data);
+        $post->save();
 
         return redirect()->route('admin.blog')->with('success', 'Blog yazısı başarıyla eklendi!');
     }
@@ -36,8 +40,8 @@ class AdminBlogController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        if ($post->image) {
-            Storage::disk('public')->delete($post->image); // Görsel varsa sil
+        if ($post->image && file_exists(public_path('uploads/' . $post->image))) {
+            unlink(public_path('uploads/' . $post->image));
         }
 
         $post->delete();
@@ -63,17 +67,24 @@ class AdminBlogController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        $data = $request->only('title', 'content');
+        $post->title = $request->title;
+        $post->content = $request->input('content');
 
-        // Eğer yeni bir resim yüklenmişse:
+
+
         if ($request->hasFile('image')) {
-            if ($post->image) {
-                Storage::disk('public')->delete($post->image); // Eski resmi sil
+            // Eski görseli sil
+            if ($post->image && file_exists(public_path('uploads/' . $post->image))) {
+                unlink(public_path('uploads/' . $post->image));
             }
-            $data['image'] = $request->file('image')->store('uploads', 'public'); // Yeni resmi kaydet
+
+            $filename = time() . '-' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('uploads'), $filename);
+            $post->image = $filename;
         }
 
-        $post->update($data); // Blog yazısını güncelle
+
+        $post->save();
         return redirect()->route('admin.blog')->with('success', 'Blog yazısı başarıyla güncellendi!');
     }
 

@@ -10,12 +10,12 @@
 
             <div class="form-group">
                 <label for="title">Başlık</label>
-                <input type="text" name="title" class="form-control" value="{{ $post->title }}" required>
+                <input type="text" name="title" id="title" class="form-control" value="{{ $post->title }}" required>
             </div>
 
             <div class="form-group">
                 <label for="content">İçerik</label>
-                <textarea name="content" class="form-control" required>{{ $post->content }}</textarea>
+                <textarea name="content" id="content" class="form-control" required>{{ $post->content }}</textarea>
             </div>
 
             <div class="form-group">

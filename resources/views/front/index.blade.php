@@ -712,7 +712,7 @@
                     </p>
                 @endif
                 <a
-                    href="İletişim.html"
+                    href="{{route('contact')}}"
                     data-page-id="273684015"
                     class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"
                 >İletişime geç

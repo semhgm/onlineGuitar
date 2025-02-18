@@ -631,21 +631,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent1)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent1->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent1->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -664,19 +664,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                                     <div class="u-block-container u-clearfix">
                                         <!--block_header-->
                                         <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                            @if($FooterContent2)
+                                                <!--block_header-->
+                                                <h5 class="u-block-header u-text">
+                                                    <!--block_header_content-->
+                                                    {{$FooterContent2->title}}
+                                                    <!--/block_header_content-->
+                                                </h5>
+                                                <!--/block_header--><!--block_content-->
+                                                <div class="u-block-content u-text">
+                                                    <!--block_content_content-->
+                                                    {{$FooterContent2->content}}
+                                                    <!--/block_content_content-->
+                                                </div>
+                                                <!--/block_content-->
+                                        @endif
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -693,36 +695,38 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            <!--block_header_content-->
-                                            Block header
-                                            <!--/block_header_content-->
-                                        </h5>
-                                        <!--/block_header--><!--block_content-->
-                                        <div class="u-block-content u-text">
-                                            <!--block_content_content-->
-                                            Block content. Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit nullam nunc justo sagittis suscipit
-                                            ultrices.
-                                            <!--/block_content_content-->
-                                        </div>
-                                        <!--/block_content-->
+                                        @if($FooterContent3)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent3->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent3->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
+                                        @endif
                                     </div>
+                                    <!--/block_content-->
                                 </div>
-                                <!--/block-->
                             </div>
-                            <!--/position-->
+                            <!--/block-->
                         </div>
+                        <!--/position-->
                     </div>
                 </div>
             </div>
         </div>
-        <div
-            class="u-border-1 u-border-white u-expanded-width u-line u-line-horizontal u-opacity u-opacity-50 u-line-1"
-        ></div>
-        <div class="u-social-icons u-spacing-10 u-social-icons-1">
-            <a class="u-social-url" title="facebook" target="_blank" href="">
+    </div>
+    <div
+        class="u-border-1 u-border-white u-expanded-width u-line u-line-horizontal u-opacity u-opacity-50 u-line-1"
+    ></div>
+    <div class="u-social-icons u-spacing-10 u-social-icons-1">
+        <a class="u-social-url" title="facebook" target="_blank" href="">
             <span class="u-icon u-social-facebook u-social-icon u-icon-1">
               <svg
                   class="u-svg-link"
@@ -747,8 +751,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                 ></path>
               </svg>
             </span>
-            </a>
-            <a class="u-social-url" title="twitter" target="_blank" href="">
+        </a>
+        <a class="u-social-url" title="twitter" target="_blank" href="">
             <span class="u-icon u-social-icon u-social-twitter u-icon-2">
               <svg
                   class="u-svg-link"
@@ -782,8 +786,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                 ></path>
               </svg>
             </span>
-            </a>
-            <a class="u-social-url" title="instagram" target="_blank" href="">
+        </a>
+        <a class="u-social-url" title="instagram" target="_blank" href="">
             <span class="u-icon u-social-icon u-social-instagram u-icon-3">
               <svg
                   class="u-svg-link"
@@ -818,8 +822,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                 ></path>
               </svg>
             </span>
-            </a>
-            <a class="u-social-url" title="pinterest" target="_blank" href="">
+        </a>
+        <a class="u-social-url" title="pinterest" target="_blank" href="">
             <span class="u-icon u-social-icon u-social-pinterest u-icon-4">
               <svg
                   class="u-svg-link"
@@ -846,19 +850,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                 ></path>
               </svg>
             </span>
-            </a>
-        </div>
-        <a
-            href="#"
-            class="u-image u-logo u-image-1"
-            data-image-width="80"
-            data-image-height="40"
-        >
-            <img
-                src="{{asset('./site2/images/default-logo.png')}}"
-                class="u-logo-image u-logo-image-1"
-            />
         </a>
+    </div>
+    <a
+        href="#"
+        class="u-image u-logo u-image-1"
+        data-image-width="80"
+        data-image-height="40"
+    >
+        <img
+            src="{{asset('./site2/images/default-logo.png')}}"
+            class="u-logo-image u-logo-image-1"
+        />
+    </a>
     </div>
 </footer>
 <section class="u-backlink u-clearfix u-grey-80">
@@ -866,11 +870,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         <span>This site was created with the </span>
         <a
             class="u-link"
-            href="https://nicepage.com/"
+            href="https://www.linkedin.com/in/semih-g%C3%BCm%C3%BC%C5%9F-185638225/"
             target="_blank"
             rel="nofollow"
         >
-            <span>Nicepage</span>
+            <span>Semih Gümüş</span>
         </a>
     </p>
 </section>

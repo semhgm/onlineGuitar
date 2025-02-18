@@ -553,11 +553,11 @@
         <span>This site was created with the </span>
         <a
             class="u-link"
-            href="https://nicepage.com/"
+            href="https://www.linkedin.com/in/semih-g%C3%BCm%C3%BC%C5%9F-185638225/"
             target="_blank"
             rel="nofollow"
         >
-            <span>Nicepage</span>
+            <span>Semih Gümüş</span>
         </a>
     </p>
 </section>

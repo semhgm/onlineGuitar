@@ -83,9 +83,12 @@ class PageController extends Controller
 
     public function contact()
     {
+        $CallUs=Page::find(8);
+        $Adress=Page::find(9);
+        $BusinessHours=Page::find(10);
         $FooterContent1=Page::find(11);
         $FooterContent2=Page::find(12);
         $FooterContent3=Page::find(13);
-        return view('front.contact',compact('FooterContent1','FooterContent2','FooterContent3'));
+        return view('front.contact',compact('CallUs','Adress','BusinessHours','FooterContent1','FooterContent2','FooterContent3'));
     }
 }

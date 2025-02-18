@@ -568,6 +568,7 @@
                                             </div>
                                             <!--/block_content-->
                                         @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -584,23 +585,22 @@
                                 <!--block-->
                                 <div class="u-block">
                                     <div class="u-block-container u-clearfix">
-                                        <!--block_header-->
-                                        <h5 class="u-block-header u-text">
-                                            @if($FooterContent2)
-                                                <!--block_header-->
-                                                <h5 class="u-block-header u-text">
-                                                    <!--block_header_content-->
-                                                    {{$FooterContent2->title}}
-                                                    <!--/block_header_content-->
-                                                </h5>
-                                                <!--/block_header--><!--block_content-->
-                                                <div class="u-block-content u-text">
-                                                    <!--block_content_content-->
-                                                    {{$FooterContent2->content}}
-                                                    <!--/block_content_content-->
-                                                </div>
-                                                <!--/block_content-->
+                                        @if($FooterContent2)
+                                            <!--block_header-->
+                                            <h5 class="u-block-header u-text">
+                                                <!--block_header_content-->
+                                                {{$FooterContent2->title}}
+                                                <!--/block_header_content-->
+                                            </h5>
+                                            <!--/block_header--><!--block_content-->
+                                            <div class="u-block-content u-text">
+                                                <!--block_content_content-->
+                                                {{$FooterContent2->content}}
+                                                <!--/block_content_content-->
+                                            </div>
+                                            <!--/block_content-->
                                         @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -632,8 +632,6 @@
                                             </div>
                                             <!--/block_content-->
                                         @endif
-                                        </div>
-                                        <!--/block_content-->
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -787,18 +785,5 @@
         </a>
     </div>
 </footer>
-<section class="u-backlink u-clearfix u-grey-80">
-    <p class="u-text">
-        <span>This site was created with the </span>
-        <a
-            class="u-link"
-            href="https://www.linkedin.com/in/semih-g%C3%BCm%C3%BC%C5%9F-185638225/"
-            target="_blank"
-            rel="nofollow"
-        >
-            <span>Semih Gümüş</span>
-        </a>
-    </p>
-</section>
 </body>
 </html>

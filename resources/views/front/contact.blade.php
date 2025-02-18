@@ -271,14 +271,6 @@
                         />
                     </form>
                 </div>
-                <p class="u-text u-text-2">
-                    Image from
-                    <a
-                        href="https://freepik.com/photos/people"
-                        class="u-active-none u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-2"
-                    >Freepik</a
-                    >
-                </p>
             </div>
         </div>
         <img
@@ -324,8 +316,10 @@
                     </g>
                   </svg>
                 </span>
-                        <h5 class="u-text u-text-palette-1-base u-text-3">Call Us</h5>
-                        <p class="u-text u-text-4">1 (234) 567-891, 1 (234) 987-654</p>
+                        @if($CallUs)
+                            <h5 class="u-text u-text-palette-1-base u-text-3">{{$CallUs->title}}</h5>
+                            <p class="u-text u-text-4">{{$CallUs->content}}</p>
+                        @endif
                     </div>
                 </div>
                 <div
@@ -362,10 +356,12 @@
                     </g>
                   </svg>
                 </span>
-                        <h5 class="u-text u-text-palette-1-base u-text-5">Location</h5>
-                        <p class="u-text u-text-6">
-                            121 Rock Sreet, 21 Avenue, New York, NY 92103-9000
-                        </p>
+                        @if($Adress)
+                            <h5 class="u-text u-text-palette-1-base u-text-5">{{$Adress->title}}</h5>
+                            <p class="u-text u-text-6">
+                                {{$Adress->content}}
+                            </p>
+                        @endif
                     </div>
                 </div>
                 <div
@@ -400,12 +396,14 @@
                     </g>
                   </svg>
                 </span>
-                        <h5 class="u-text u-text-palette-1-base u-text-7">
-                            Business Hours
-                        </h5>
-                        <p class="u-text u-text-8">
-                            Mon – Fri …… 10 am – 8 pm, Sat, Sun ....… Closed
-                        </p>
+                        @if($BusinessHours)
+                            <h5 class="u-text u-text-palette-1-base u-text-7">
+                                {{$BusinessHours->title}}
+                            </h5>
+                            <p class="u-text u-text-8">
+                                {{$BusinessHours->content}}
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -447,6 +445,7 @@
                                             </div>
                                             <!--/block_content-->
                                         @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -478,6 +477,7 @@
                                             </div>
                                             <!--/block_content-->
                                         @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -662,18 +662,5 @@
         </a>
     </div>
 </footer>
-<section class="u-backlink u-clearfix u-grey-80">
-    <p class="u-text">
-        <span>This site was created with the </span>
-        <a
-            class="u-link"
-            href="https://www.linkedin.com/in/semih-g%C3%BCm%C3%BC%C5%9F-185638225/"
-            target="_blank"
-            rel="nofollow"
-        >
-            <span>Semih Gümüş</span>
-        </a>
-    </p>
-</section>
 </body>
 </html>

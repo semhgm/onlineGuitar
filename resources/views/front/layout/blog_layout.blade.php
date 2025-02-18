@@ -57,6 +57,16 @@
         .u-btn:hover {
             background-color: #0056b3;
         }
+
+        /* Hero section için */
+        .u-section-1 {
+            background-attachment: fixed !important;
+            background-position: center !important;
+            background-size: cover !important;
+        }
+
+        /* Footer stillerini küçültmek için */
+
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -302,6 +312,7 @@
                                             </div>
                                             <!--/block_content-->
                                         @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -333,6 +344,7 @@
                                             </div>
                                             <!--/block_content-->
                                         @endif
+
                                     </div>
                                 </div>
                                 <!--/block-->
@@ -517,18 +529,6 @@
         </a>
     </div>
 </footer>
-<section class="u-backlink u-clearfix u-grey-80">
-    <p class="u-text">
-        <span>This site was created with the </span>
-        <a
-            class="u-link"
-            href="https://www.linkedin.com/in/semih-g%C3%BCm%C3%BC%C5%9F-185638225/"
-            target="_blank"
-            rel="nofollow"
-        >
-            <span>Semih Gümüş</span>
-        </a>
-    </p>
-</section>
+
 </body>
 </html>

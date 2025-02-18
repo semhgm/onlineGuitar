@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html style="font-size: 16px" lang="tr">
 <head>
+    <style>
+
+
+
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta
@@ -1101,18 +1106,5 @@
         </a>
     </div>
 </footer>
-<section class="u-backlink u-clearfix u-grey-80">
-    <p class="u-text">
-        <span>This site was created with the </span>
-        <a
-            class="u-link"
-            href="https://www.linkedin.com/in/semih-g%C3%BCm%C3%BC%C5%9F-185638225/"
-            target="_blank"
-            rel="nofollow"
-        >
-            <span>Semih Gümüş</span>
-        </a>
-    </p>
-</section>
 </body>
 </html>

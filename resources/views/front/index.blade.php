@@ -1066,30 +1066,7 @@
             </a>
             <a class="u-social-url" title="pinterest" target="_blank" href="">
             <span class="u-icon u-social-icon u-social-pinterest u-icon-4">
-              <svg
-                  class="u-svg-link"
-                  preserveAspectRatio="xMidYMin slice"
-                  viewBox="0 0 112 112"
-                  style=""
-              >
-                <use xlink:href="#svg-8ceb"></use>
-              </svg>
-              <svg
-                  class="u-svg-content"
-                  viewBox="0 0 112 112"
-                  x="0"
-                  y="0"
-                  id="svg-8ceb"
-              >
-                <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-                <path
-                    fill="#FFFFFF"
-                    d="M61.1,76.9c-4.7-0.3-6.7-2.7-10.3-5c-2,10.7-4.6,20.9-11.9,26.2c-2.2-16.1,3.3-28.2,5.9-41
-      c-4.4-7.5,0.6-22.5,9.9-18.8c11.6,4.6-10,27.8,4.4,30.7C74.2,72,80.3,42.8,71,33.4C57.5,19.6,31.7,33,34.9,52.6
-      c0.8,4.8,5.8,6.2,2,12.9c-8.7-1.9-11.2-8.8-10.9-17.8C26.5,32.8,39.3,22.5,52.2,21c16.3-1.9,31.6,5.9,33.7,21.2
-      C88.2,59.5,78.6,78.2,61.1,76.9z"
-                ></path>
-              </svg>
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
             </span>
             </a>
         </div>

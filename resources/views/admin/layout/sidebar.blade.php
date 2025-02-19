@@ -14,6 +14,7 @@
             <li><a class="nav-link" href="{{route('admin.about')}}"><i data-feather="file"></i><span>Hakkımda</span></a></li>
             <li><a class="nav-link" href="{{route('admin.services')}}"><i data-feather="file"></i><span>Hizmetler</span></a></li>
             <li><a class="nav-link" href="{{route('admin.blog')}}"><i data-feather="file"></i><span>Blog</span></a></li>
+            <li><a class="nav-link" href="{{route('admin.courses')}}"><i data-feather="file"></i><span>Dersler</span></a></li>
             <li><a class="nav-link" href="{{route('admin.contact')}}"><i data-feather="file"></i><span>İletişim</span></a></li>
         </ul>
     </aside>

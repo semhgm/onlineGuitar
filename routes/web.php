@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminContactController;
+use App\Http\Controllers\AdminCoursesController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminServiceController;
@@ -35,6 +36,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/about', [AdminPageController::class, 'about'])->name('admin.about');
     Route::get('/services', [AdminServiceController::class, 'services'])->name('admin.services');
     Route::get('/blog', [AdminBlogController::class, 'blog'])->name('admin.blog');
+    Route::get('/courses', [AdminCoursesController::class, 'courses'])->name('admin.courses');
     Route::get('/contact', [AdminContactController::class, 'contact'])->name('admin.contact');
     // Page işlemleri
     //bu kısım sayfalardaki yazıları yönettiğimiz admin sayfaları için
@@ -52,6 +54,13 @@ Route::prefix('admin')->group(function () {
     Route::delete('/blog/destroy/{id}', [AdminBlogController::class, 'destroy'])->name('admin.blog.destroy');
     Route::get('/blog/edit/{id}', [AdminBlogController::class, 'edit'])->name('admin.blog.edit');
     Route::put('/blog/update/{id}', [AdminBlogController::class, 'update'])->name('admin.blog.update');
+    // bu kısım dersleri yönetiyor
+    Route::post('/courses/store', [AdminCoursesController::class, 'store'])->name('admin.courses.store');
+    Route::delete('/courses/destroy/{id}', [AdminCoursesController::class, 'destroy'])->name('admin.courses.destroy');
+    Route::get('/courses/edit/{id}', [AdminCoursesController::class, 'edit'])->name('admin.courses.edit');
+    Route::put('/courses/update/{id}', [AdminCoursesController::class, 'update'])->name('admin.courses.update');
+
+
 
 
 

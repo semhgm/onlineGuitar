@@ -63,7 +63,9 @@
                                 </td>
                                 <td>
                                     @if ($course->image)
-                                        <img src="{{ $course->image }}" alt="{{ $course->title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;">
+                                        <img src="{{ asset('uploads/' . $course->image) }}" alt="{{ $course->title }}" style="width: 50px; height: 50px;
+                                     object-fit: cover; border-radius: 5px;"
+                                        >
                                     @else
                                         Görsel Yok
                                     @endif

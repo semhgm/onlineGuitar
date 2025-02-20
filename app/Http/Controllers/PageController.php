@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Course;
 use App\Models\Page;
 
 use App\Models\Post;
@@ -74,11 +75,12 @@ class PageController extends Controller
 
     public function courses()
     {
-        $Courses=Page::find(18);
+        $Course=Page::find(18);
         $FooterContent1=Page::find(11);
         $FooterContent2=Page::find(12);
         $FooterContent3=Page::find(13);
-        return view('front.courses',compact('Courses','FooterContent1','FooterContent2','FooterContent3'));
+        $Courses=Course::all();
+        return view('front.courses',compact('Course','Courses','FooterContent1','FooterContent2','FooterContent3'));
     }
 
     public function contact()

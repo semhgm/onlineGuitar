@@ -196,12 +196,12 @@
     id="sec-a7be"
 >
     <div class="u-clearfix u-sheet u-sheet-1">
-        @if($Courses)
+        @if($Course)
             <h1 class="u-align-left u-text u-text-default u-title u-text-1">
-                {{$Courses->title}}
+                {{$Course->title}}
             </h1>
             <p class="u-align-left u-large-text u-text u-text-variant u-text-2">
-                {{$Courses->content}}
+                {{$Course->content}}
             </p>
         @endif
 
@@ -211,31 +211,44 @@
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
             <div class="u-repeater u-repeater-1">
+                @forelse($Courses as $course)
+
                 <div
                     class="u-container-style u-list-item u-repeater-item u-video-cover u-white"
                 >
                     <div
                         class="u-container-layout u-similar-container u-valign-top u-container-layout-1"
                     >
-                        <h3 class="u-text u-text-default u-text-1">Sample Headline</h3>
+                        <h3 class="u-text u-text-default u-text-1">{{$course->title}}</h3>
                         <div
                             class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1"
                         ></div>
-                        <img
-                            alt=""
-                            class="custom-expanded u-image u-image-default u-image-1"
-                            data-image-width="2000"
-                            data-image-height="1333"
-                            src="{{asset('./site2/images/90fc53c9.svg')}}"
-                        />
+                        @if($course->image)
+                            <img
+                                alt=""
+                                class="custom-expanded u-image u-image-default u-image-1"
+                                data-image-width="2000"
+                                data-image-height="1333"
+                                src="{{asset('uploads/' . $course->image) }}"
+                            />
+                        @else
+                            <img
+                                alt=""
+                                class="custom-expanded u-image u-image-default u-image-1"
+                                data-image-width="2000"
+                                data-image-height="1333"
+                                src="{{asset('./site2/images/90fc53c9.svg')}}"
+                            />
+                        @endif
+
+
                         <p class="u-text u-text-default u-text-2">
-                            Sample text. Click to select the text box. Click again or
-                            double click to start editing the text.
+                            {{$course->description}}
                         </p>
-                        <a href="" class="u-btn u-button-style u-palette-3-base u-btn-1"
-                        >learn more</a
+                        <a href="{{$course->drive_link}}" class="u-btn u-button-style u-palette-3-base u-btn-1"
+                        >Derse Git</a
                         ><!--shopping_cart-->
-                        <a class="u-shopping-cart u-shopping-cart-1" href="#sec-0a98">
+                        <a class="u-shopping-cart u-shopping-cart-1" href="">
                   <span
                       class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-shopping-cart-icon u-text-palette-1-base u-icon-1"
                   >
@@ -269,296 +282,9 @@
                         ><!--/shopping_cart-->
                     </div>
                 </div>
-                <div
-                    class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-2"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-top u-container-layout-2"
-                    >
-                        <h3 class="u-text u-text-default u-text-3">Sample Headline</h3>
-                        <div
-                            class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-2"
-                        ></div>
-                        <img
-                            alt=""
-                            class="custom-expanded u-image u-image-default u-image-2"
-                            data-image-width="2000"
-                            data-image-height="1333"
-                            src="{{asset('./site2/images/90fc53c9.svg')}}"
-                        />
-                        <p class="u-text u-text-default u-text-4">
-                            Sample text. Click to select the text box. Click again or
-                            double click to start editing the text.
-                        </p>
-                        <a href="" class="u-btn u-button-style u-palette-3-base u-btn-2"
-                        >learn more</a
-                        ><!--shopping_cart-->
-                        <a class="u-shopping-cart u-shopping-cart-2" href="#sec-0a98">
-                  <span
-                      class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-shopping-cart-icon u-text-palette-1-base u-icon-2"
-                  >
-                    <svg
-                        class="u-svg-link"
-                        preserveAspectRatio="xMidYMin slice"
-                        viewBox="0 0 16 16"
-                        style=""
-                    >
-                      <use xlink:href="#svg-9883"></use>
-                    </svg>
-                    <svg
-                        class="u-svg-content"
-                        viewBox="0 0 16 16"
-                        x="0px"
-                        y="0px"
-                        id="svg-9883"
-                    >
-                      <path
-                          d="M14.5,3l-2.1,5H6.1L5.9,7.6L4,3H14.5 M0,0v1h2.1L5,8l-2,4h11v-1H4.6l1-2H13l3-7H3.6L2.8,0H0z M12.5,13
-	c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S13.3,13,12.5,13L12.5,13z M4.5,13C3.7,13,3,13.7,3,14.5S3.7,16,4.5,16
-	S6,15.3,6,14.5S5.3,13,4.5,13L4.5,13z"
-                      ></path>
-                    </svg>
-                    <span
-                        class="u-icon-circle u-palette-1-base u-shopping-cart-count"
-                        style="font-size: 0.75rem"
-                    ><!--shopping_cart_count-->0<!--/shopping_cart_count--></span
-                    >
-                  </span> </a
-                        ><!--/shopping_cart-->
-                    </div>
-                </div>
-                <div
-                    class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-3"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-top u-container-layout-3"
-                    >
-                        <h3 class="u-text u-text-default u-text-5">Sample Headline</h3>
-                        <div
-                            class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-3"
-                        ></div>
-                        <img
-                            alt=""
-                            class="custom-expanded u-image u-image-default u-image-3"
-                            data-image-width="2000"
-                            data-image-height="1333"
-                            src="{{asset('./site2/images/90fc53c9.svg')}}"
-                        />
-                        <p class="u-text u-text-default u-text-6">
-                            Sample text. Click to select the text box. Click again or
-                            double click to start editing the text.
-                        </p>
-                        <a href="" class="u-btn u-button-style u-palette-3-base u-btn-3"
-                        >learn more</a
-                        ><!--shopping_cart-->
-                        <a class="u-shopping-cart u-shopping-cart-3" href="#sec-0a98">
-                  <span
-                      class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-shopping-cart-icon u-text-palette-1-base u-icon-3"
-                  >
-                    <svg
-                        class="u-svg-link"
-                        preserveAspectRatio="xMidYMin slice"
-                        viewBox="0 0 16 16"
-                        style=""
-                    >
-                      <use xlink:href="#svg-9883"></use>
-                    </svg>
-                    <svg
-                        class="u-svg-content"
-                        viewBox="0 0 16 16"
-                        x="0px"
-                        y="0px"
-                        id="svg-9883"
-                    >
-                      <path
-                          d="M14.5,3l-2.1,5H6.1L5.9,7.6L4,3H14.5 M0,0v1h2.1L5,8l-2,4h11v-1H4.6l1-2H13l3-7H3.6L2.8,0H0z M12.5,13
-	c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S13.3,13,12.5,13L12.5,13z M4.5,13C3.7,13,3,13.7,3,14.5S3.7,16,4.5,16
-	S6,15.3,6,14.5S5.3,13,4.5,13L4.5,13z"
-                      ></path>
-                    </svg>
-                    <span
-                        class="u-icon-circle u-palette-1-base u-shopping-cart-count"
-                        style="font-size: 0.75rem"
-                    ><!--shopping_cart_count-->0<!--/shopping_cart_count--></span
-                    >
-                  </span> </a
-                        ><!--/shopping_cart-->
-                    </div>
-                </div>
-                <div
-                    class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-4"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-top u-container-layout-4"
-                    >
-                        <h3 class="u-text u-text-default u-text-7">Sample Headline</h3>
-                        <div
-                            class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-4"
-                        ></div>
-                        <img
-                            alt=""
-                            class="custom-expanded u-image u-image-default u-image-4"
-                            data-image-width="2000"
-                            data-image-height="1333"
-                            src="{{asset('./site2/nimages/90fc53c9.svg')}}"
-                        />
-                        <p class="u-text u-text-default u-text-8">
-                            Sample text. Click to select the text box. Click again or
-                            double click to start editing the text.
-                        </p>
-                        <a href="" class="u-btn u-button-style u-palette-3-base u-btn-4"
-                        >learn more</a
-                        ><!--shopping_cart-->
-                        <a class="u-shopping-cart u-shopping-cart-4" href="#sec-0a98">
-                  <span
-                      class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-shopping-cart-icon u-text-palette-1-base u-icon-4"
-                  >
-                    <svg
-                        class="u-svg-link"
-                        preserveAspectRatio="xMidYMin slice"
-                        viewBox="0 0 16 16"
-                        style=""
-                    >
-                      <use xlink:href="#svg-9883"></use>
-                    </svg>
-                    <svg
-                        class="u-svg-content"
-                        viewBox="0 0 16 16"
-                        x="0px"
-                        y="0px"
-                        id="svg-9883"
-                    >
-                      <path
-                          d="M14.5,3l-2.1,5H6.1L5.9,7.6L4,3H14.5 M0,0v1h2.1L5,8l-2,4h11v-1H4.6l1-2H13l3-7H3.6L2.8,0H0z M12.5,13
-	c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S13.3,13,12.5,13L12.5,13z M4.5,13C3.7,13,3,13.7,3,14.5S3.7,16,4.5,16
-	S6,15.3,6,14.5S5.3,13,4.5,13L4.5,13z"
-                      ></path>
-                    </svg>
-                    <span
-                        class="u-icon-circle u-palette-1-base u-shopping-cart-count"
-                        style="font-size: 0.75rem"
-                    ><!--shopping_cart_count-->0<!--/shopping_cart_count--></span
-                    >
-                  </span> </a
-                        ><!--/shopping_cart-->
-                    </div>
-                </div>
-                <div
-                    class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-5"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-top u-container-layout-5"
-                    >
-                        <h3 class="u-text u-text-default u-text-9">Sample Headline</h3>
-                        <div
-                            class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-5"
-                        ></div>
-                        <img
-                            alt=""
-                            class="custom-expanded u-image u-image-default u-image-5"
-                            data-image-width="2000"
-                            data-image-height="1333"
-                            src="{{asset('./site2/images/90fc53c9.svg')}}"
-                        />
-                        <p class="u-text u-text-default u-text-10">
-                            Sample text. Click to select the text box. Click again or
-                            double click to start editing the text.
-                        </p>
-                        <a href="" class="u-btn u-button-style u-palette-3-base u-btn-5"
-                        >learn more</a
-                        ><!--shopping_cart-->
-                        <a class="u-shopping-cart u-shopping-cart-5" href="#sec-0a98">
-                  <span
-                      class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-shopping-cart-icon u-text-palette-1-base u-icon-5"
-                  >
-                    <svg
-                        class="u-svg-link"
-                        preserveAspectRatio="xMidYMin slice"
-                        viewBox="0 0 16 16"
-                        style=""
-                    >
-                      <use xlink:href="#svg-9883"></use>
-                    </svg>
-                    <svg
-                        class="u-svg-content"
-                        viewBox="0 0 16 16"
-                        x="0px"
-                        y="0px"
-                        id="svg-9883"
-                    >
-                      <path
-                          d="M14.5,3l-2.1,5H6.1L5.9,7.6L4,3H14.5 M0,0v1h2.1L5,8l-2,4h11v-1H4.6l1-2H13l3-7H3.6L2.8,0H0z M12.5,13
-	c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S13.3,13,12.5,13L12.5,13z M4.5,13C3.7,13,3,13.7,3,14.5S3.7,16,4.5,16
-	S6,15.3,6,14.5S5.3,13,4.5,13L4.5,13z"
-                      ></path>
-                    </svg>
-                    <span
-                        class="u-icon-circle u-palette-1-base u-shopping-cart-count"
-                        style="font-size: 0.75rem"
-                    ><!--shopping_cart_count-->0<!--/shopping_cart_count--></span
-                    >
-                  </span> </a
-                        ><!--/shopping_cart-->
-                    </div>
-                </div>
-                <div
-                    class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-6"
-                >
-                    <div
-                        class="u-container-layout u-similar-container u-valign-top u-container-layout-6"
-                    >
-                        <h3 class="u-text u-text-default u-text-11">Sample Headline</h3>
-                        <div
-                            class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-6"
-                        ></div>
-                        <img
-                            alt=""
-                            class="custom-expanded u-image u-image-default u-image-6"
-                            data-image-width="2000"
-                            data-image-height="1333"
-                            src="{{asset('./site2/images/90fc53c9.svg')}}"
-                        />
-                        <p class="u-text u-text-default u-text-12">
-                            Sample text. Click to select the text box. Click again or
-                            double click to start editing the text.
-                        </p>
-                        <a href="" class="u-btn u-button-style u-palette-3-base u-btn-6"
-                        >learn more</a
-                        ><!--shopping_cart-->
-                        <a class="u-shopping-cart u-shopping-cart-6" href="#sec-0a98">
-                  <span
-                      class="u-border-2 u-border-palette-1-base u-icon u-icon-circle u-shopping-cart-icon u-text-palette-1-base u-icon-6"
-                  >
-                    <svg
-                        class="u-svg-link"
-                        preserveAspectRatio="xMidYMin slice"
-                        viewBox="0 0 16 16"
-                        style=""
-                    >
-                      <use xlink:href="#svg-9883"></use>
-                    </svg>
-                    <svg
-                        class="u-svg-content"
-                        viewBox="0 0 16 16"
-                        x="0px"
-                        y="0px"
-                        id="svg-9883"
-                    >
-                      <path
-                          d="M14.5,3l-2.1,5H6.1L5.9,7.6L4,3H14.5 M0,0v1h2.1L5,8l-2,4h11v-1H4.6l1-2H13l3-7H3.6L2.8,0H0z M12.5,13
-	c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S13.3,13,12.5,13L12.5,13z M4.5,13C3.7,13,3,13.7,3,14.5S3.7,16,4.5,16
-	S6,15.3,6,14.5S5.3,13,4.5,13L4.5,13z"
-                      ></path>
-                    </svg>
-                    <span
-                        class="u-icon-circle u-palette-1-base u-shopping-cart-count"
-                        style="font-size: 0.75rem"
-                    ><!--shopping_cart_count-->0<!--/shopping_cart_count--></span
-                    >
-                  </span> </a
-                        ><!--/shopping_cart-->
-                    </div>
-                </div>
+                @empty
+                    <p class="u-text u-text-center">Henüz bir ders bulunmamaktadır.</p>
+                @endforelse
             </div>
         </div>
     </div>

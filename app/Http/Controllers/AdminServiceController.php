@@ -36,11 +36,8 @@ class AdminServiceController extends Controller
 
         // Servisi kaydet
         $service->save();
-
         // Başarı mesajıyla geri dön
-        return redirect()
-            ->back()
-            ->with('success', 'Servis başarıyla eklendi!');
+        return redirect()->back()->with('success', 'Servis başarıyla eklendi!');
     }
     public function edit($id)
     {

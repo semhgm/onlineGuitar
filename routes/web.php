@@ -29,6 +29,14 @@ Route::get('/blog/{id}', [PageController::class, 'blogDetail'])->name('blog.deta
 Route::get('/courses', [PageController::class, 'courses'])->name('courses');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
+
+
+
+
+
+
+
+
 //admin sayfalarına yönlendiriyor
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
@@ -36,7 +44,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/about', [AdminPageController::class, 'about'])->name('admin.about');
     Route::get('/services', [AdminServiceController::class, 'services'])->name('admin.services');
     Route::get('/blog', [AdminBlogController::class, 'blog'])->name('admin.blog');
-    Route::get('/courses', [AdminCoursesController::class, 'courses'])->name('admin.courses');
+    Route::get('/courses', [AdminCoursesController::class, 'index'])->name('admin.courses');
     Route::get('/contact', [AdminContactController::class, 'contact'])->name('admin.contact');
     // Page işlemleri
     //bu kısım sayfalardaki yazıları yönettiğimiz admin sayfaları için

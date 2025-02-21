@@ -8,7 +8,7 @@
     <title>İletişim</title>
     <link rel="stylesheet" href="{{asset('./site2/nicepage.css')}}" media="screen" />
     <link rel="stylesheet" href="{{asset('./site2/İletişim.css')}}" media="screen" />
-    <script
+  <script
         class="u-script"
         type="text/javascript"
         src="{{asset('./site2/jquery.js')}}"
@@ -196,13 +196,16 @@
                 <div
                     class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-expanded-width-xs u-form u-form-1"
                 >
+
                     <form
-                        action="https://forms.nicepagesrv.com/v2/form/process"
+                        action="{{route('contact.send')}}"
                         class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form"
                         style="padding: 10px"
                         source="email"
-                        name="form"
+                        method="POST"
                     >
+                        @csrf
+
                         <div class="u-form-group u-form-name">
                             <label for="name-5a14" class="u-form-control-hidden u-label"
                             >Name</label
@@ -210,7 +213,7 @@
                             <input
                                 type="text"
                                 placeholder="Enter your Name"
-                                id="name-5a14"
+                                id="name"
                                 name="name"
                                 class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle"
                                 required=""
@@ -223,7 +226,7 @@
                             <input
                                 type="email"
                                 placeholder="Enter a valid email address"
-                                id="email-5a14"
+                                id="email"
                                 name="email"
                                 class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle"
                                 required=""
@@ -239,18 +242,18 @@
                                 placeholder="Enter your message"
                                 rows="4"
                                 cols="50"
-                                id="message-5a14"
+                                id="message"
                                 name="message"
                                 class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle"
                                 required=""
                             ></textarea>
                         </div>
                         <div class="u-align-center u-form-group u-form-submit">
-                            <a
-                                href="#"
+                            <button
+                                type="submit"
                                 class="u-border-2 u-border-black u-btn u-btn-submit u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1"
-                            >Submit</a
-                            >
+                            >Submit</button>
+
                             <input
                                 type="submit"
                                 value="submit"
@@ -260,7 +263,7 @@
                         <div class="u-form-send-message u-form-send-success">
                             Thank you! Your message has been sent.
                         </div>
-                        <div class="u-form-send-error u-form-send-message">
+                      <div class="u-form-send-error u-form-send-message">
                             Unable to send your message. Please fix errors then try again.
                         </div>
                         <input type="hidden" value="" name="recaptchaResponse" />
@@ -270,6 +273,9 @@
                             value="4df3e0cf-fad5-be81-c7b0-78d64b7df96e"
                         />
                     </form>
+                    @if(session('success'))
+                        <p>{{ session('success') }}</p>
+                    @endif
                 </div>
             </div>
         </div>

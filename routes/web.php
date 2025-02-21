@@ -8,7 +8,7 @@ use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,12 +28,7 @@ Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/blog/{id}', [PageController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/courses', [PageController::class, 'courses'])->name('courses');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-
-
-
-
-
-
+route::post('/contact/send',[adminContactController::class,'sendMail'])->name('contact.send');
 
 
 
@@ -69,15 +64,5 @@ Route::prefix('admin')->group(function () {
     Route::put('/courses/update/{id}', [AdminCoursesController::class, 'update'])->name('admin.courses.update');
 
 
-
-
-
-
-
-
-
-
-
-
-
 });
+

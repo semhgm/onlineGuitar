@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminCoursesController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminServiceController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
@@ -79,12 +80,15 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::delete('/courses/destroy/{id}', [AdminCoursesController::class, 'destroy'])->name('admin.courses.destroy');
         Route::get('/courses/edit/{id}', [AdminCoursesController::class, 'edit'])->name('admin.courses.edit');
         Route::put('/courses/update/{id}', [AdminCoursesController::class, 'update'])->name('admin.courses.update');
+
+
+
         // login page'e yönlendiriyor
-
-
-
-        
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+        //kullanıcı ayarları
+    Route::get('/settings', [AdminUserController::class, 'settings'])->name('admin.settings');
+        Route::put('/settings/update', [AdminDashboardController::class, 'update'])->name('admin.settings.update');
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,8 @@ class AdminCoursesController extends Controller
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('admin.pages.courses_edit', compact('course'));
+        $message_count=Contact::count();
+        return view('admin.pages.courses_edit', compact('course','message_count'));
     }
 
     public function update(Request $request, $id)

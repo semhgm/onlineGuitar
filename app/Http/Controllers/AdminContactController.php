@@ -11,7 +11,8 @@ class AdminContactController extends Controller
 {
     public function contact(){
         $contacts = Contact::all(); // Tüm kayıtları al
-        return view('admin.pages.contact', compact('contacts'));
+        $message_count=Contact::count();
+        return view('admin.pages.contact', compact('contacts','message_count'));
     }
 
 

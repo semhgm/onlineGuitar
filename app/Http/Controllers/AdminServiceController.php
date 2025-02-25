@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class AdminServiceController extends Controller
 
     public function services(){
         $services = Service::all();
-    return view('admin.pages.services',compact('services'));
+        $message_count = Contact::count();
+    return view('admin.pages.services',compact('services','message_count'));
     }
     public function store(Request $request)
     {

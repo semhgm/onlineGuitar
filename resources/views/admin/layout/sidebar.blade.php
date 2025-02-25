@@ -1,8 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('admin.dashboard') }}"> 
-                <img alt="logo" src="{{asset('./otika/assets/img/logo.png')}}" class="header-logo" /> 
+            <a href="{{ route('admin.dashboard') }}">
                 <span class="logo-name">Serhat Çohadar</span>
             </a>
         </div>
@@ -48,6 +47,12 @@
                 <a class="nav-link" href="{{route('admin.contact')}}">
                     <i class="fas fa-envelope"></i>
                     <span>İletişim</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{{route('admin.settings')}}">
+                    <i class="fas fa-gear"></i>
+                    <span>Kullanıcı Ayarları</span>
                 </a>
             </li>
         </ul>

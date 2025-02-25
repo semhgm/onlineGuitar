@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Contact;
 use App\Models\Page;
 
 use Illuminate\Http\Request;
@@ -11,8 +12,8 @@ class AdminPageController extends Controller
     {
         $pages = Page::all(); // Veritabanından sayfaları çekiyoruz
 
-        return view('admin.pages.app', compact('pages')); // View'e 'pages' değişkeni ile gönderiyoruz
-
+        $message_count=Contact::count();
+        return view('admin.pages.app', compact('pages','message_count')); // View'e 'pages' değişkeni ile gönderiyoruz
 
     }
 

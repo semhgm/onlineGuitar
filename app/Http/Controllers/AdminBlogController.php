@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class AdminBlogController extends Controller
     public function blog()
     {
         $posts = Post::all(); // Tüm blog yazılarını al
-        return view('admin.pages.blog', compact('posts'));
+        $message_count=Contact::count();
+        return view('admin.pages.blog', compact('posts','message_count'));
     }
     public function store(Request $request)
     {

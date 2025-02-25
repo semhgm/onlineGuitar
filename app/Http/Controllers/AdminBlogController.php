@@ -52,8 +52,10 @@ class AdminBlogController extends Controller
     }
     public function edit($id)
     {
+        $message_count=Contact::count();
+
         $post = Post::findOrFail($id); // İstediğimiz blog yazısını al
-        return view('admin.pages.blog_edit', compact('post'));
+        return view('admin.pages.blog_edit', compact('post','message_count'));
     }
 
     /**
@@ -71,8 +73,6 @@ class AdminBlogController extends Controller
 
         $post->title = $request->title;
         $post->content = $request->input('content');
-
-
 
         if ($request->hasFile('image')) {
             // Eski görseli sil

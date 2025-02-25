@@ -22,11 +22,13 @@ class AdminPageController extends Controller
     public function edit($id)
     {
         $page = Page::find($id); // İlgili id'ye sahip sayfayı buluyoruz
+        $message_count=Contact::count();
+
         if (!$page) {
-            return redirect()->route('pages.index')->with('error', 'Sayfa bulunamadı.');
+            return redirect()->route('pages.index',compact('message_count'))->with('error', 'Sayfa bulunamadı.');
         }
 
-        return view('admin.pages.update', compact('page')); // 'update.blade.php' görünümüne sayfa verisini gönderiyoruz
+        return view('admin.pages.update', compact('page','message_count')); // 'update.blade.php' görünümüne sayfa verisini gönderiyoruz
     }
 
 
@@ -57,7 +59,8 @@ class AdminPageController extends Controller
     }
     public function about()
     {
-        return view('admin.pages.about');
+        $message_count=Contact::count();
+        return view('admin.pages.about',compact('message_count'));
     }
 
 

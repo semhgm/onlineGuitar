@@ -86,9 +86,19 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         // login page'e yönlendiriyor
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+
+
         //kullanıcı ayarları
-    Route::get('/settings', [AdminUserController::class, 'settings'])->name('admin.settings');
-        Route::put('/settings/update', [AdminDashboardController::class, 'update'])->name('admin.settings.update');
+        Route::get('/settings', [AdminUserController::class, 'settings'])->name('admin.settings');
+        Route::post('/user/settings', [AdminUserController::class, 'profile'])->name('admin.user.profile');
+        // Düzenleme sayfasını göstermek için GET route'u
+        Route::get('/user/settings/edit/{id}', [AdminUserController::class, 'edit'])->name('admin.user.edit');
+        // Güncelleme işlemi için PUT route'u
+        Route::put('/user/settings/update/{id}', [AdminUserController::class, 'update'])->name('admin.user.update');
+        Route::delete('/user/settings/destroy/{id}', [AdminUserController::class, 'destroy'])->name('admin.user.destroy');
+
+
+    Route::put('/settings/update', [AdminDashboardController::class, 'update'])->name('admin.settings.update');
 });
 
 

@@ -12,7 +12,8 @@ class AdminCoursesController extends Controller
 
     public function index(){
         $courses = Course::all(); // Tüm blog yazılarını al
-        return view('admin.pages.courses', compact('courses'));
+        $message_count=Contact::count();
+        return view('admin.pages.courses', compact('courses','message_count'));
     }
     public function store(Request $request)
     {

@@ -44,7 +44,9 @@ class AdminServiceController extends Controller
     public function edit($id)
     {
         $service = Service::findOrFail($id);
-        return view('admin.pages.services_edit', compact('service'));
+        $message_count=Contact::count();
+
+        return view('admin.pages.services_edit', compact('service','message_count'));
     }
     public function update(Request $request, $id)
     {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 
 <!-- index.html  21 Nov 2019 03:44:50 GMT -->
@@ -15,12 +15,68 @@
     <link rel="stylesheet" href="{{asset('./otika/assets/css/components.css')}}">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{asset('./otika/assets/css/custom.css')}}">
-    <link rel='shortcut icon' type='image/x-icon' href='{{asset('./otika/assets/img/favicon.ico')}}' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link='shortcut icon' type='image/x-icon' href='{{asset('./otika/assets/img/favicon.ico')}}' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .main-sidebar {
+            background: #2C3E50;
+        }
+
+        .sidebar-menu li a {
+            color: #ECF0F1;
+            padding: 12px 15px;
+            margin: 4px 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li a:hover {
+            background: #34495E;
+            color: #fff;
+        }
+
+        .sidebar-menu li a i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .main-content {
+            background: #F8F9FA;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        .navbar {
+            background: #fff !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .btn-primary {
+            background: #3498DB;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #2980B9;
+        }
+
+        .logo-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+    </style>
 
 </head>
 
 <body>
+
+
 <div class="loader"></div>
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
@@ -156,9 +212,15 @@
                             Settings
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
-                            Logout
+                        <a href="#" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+
+
                     </div>
                 </li>
             </ul>

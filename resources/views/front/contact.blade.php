@@ -41,6 +41,13 @@
     <meta property="og:title" content="İletişim" />
     <meta property="og:type" content="website" />
     <meta data-intl-tel-input-cdn-path="intlTelInput/" />
+    <!-- jQuery'yi dahil et -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SweetAlert2 CSS ve JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
 </head>
 <body
     data-path-to-root="./"
@@ -193,92 +200,89 @@
         >
             <div class="u-container-layout u-valign-top u-container-layout-1">
                 <h2 class="u-text u-text-1">Contact Us</h2>
-                <div
-                    class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-expanded-width-xs u-form u-form-1"
-                >
-
-                    <form
-                        action="{{route('contact.send')}}"
-                        class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form"
-                        style="padding: 10px"
-                        source="email"
-                        method="POST"
-                    >
+                <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-expanded-width-xs u-form u-form-1">
+                    <form action="{{route('contact.send')}}" id="contactForm" class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form" style="padding: 10px" source="email" method="POST">
                         @csrf
-
                         <div class="u-form-group u-form-name">
-                            <label for="name-5a14" class="u-form-control-hidden u-label"
-                            >Name</label
-                            >
-                            <input
-                                type="text"
-                                placeholder="Enter your Name"
-                                id="name"
-                                name="name"
-                                class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle"
-                                required=""
-                            />
+                            <label for="name-5a14" class="u-form-control-hidden u-label">Name</label>
+                            <input type="text" placeholder="Enter your Name" id="name" name="name" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="" />
                         </div>
                         <div class="u-form-email u-form-group">
-                            <label for="email-5a14" class="u-form-control-hidden u-label"
-                            >Email</label
-                            >
-                            <input
-                                type="email"
-                                placeholder="Enter a valid email address"
-                                id="email"
-                                name="email"
-                                class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle"
-                                required=""
-                            />
+                            <label for="email-5a14" class="u-form-control-hidden u-label">Email</label>
+                            <input type="email" placeholder="Enter a valid email address" id="email" name="email" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="" />
                         </div>
                         <div class="u-form-group u-form-message">
-                            <label
-                                for="message-5a14"
-                                class="u-form-control-hidden u-label"
-                            >Message</label
-                            >
-                            <textarea
-                                placeholder="Enter your message"
-                                rows="4"
-                                cols="50"
-                                id="message"
-                                name="message"
-                                class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle"
-                                required=""
-                            ></textarea>
+                            <label for="message-5a14" class="u-form-control-hidden u-label">Message</label>
+                            <textarea placeholder="Enter your message" rows="4" cols="50" id="message" name="message" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required=""></textarea>
                         </div>
                         <div class="u-align-center u-form-group u-form-submit">
-                            <button
-                                type="submit"
-                                class="u-border-2 u-border-black u-btn u-btn-submit u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1"
-                            >Submit</button>
-
-                            <input
-                                type="submit"
-                                value="submit"
-                                class="u-form-control-hidden"
-                            />
-                        </div>
-                        <div class="u-form-send-message u-form-send-success">
-                            Thank you! Your message has been sent.
-                        </div>
-                      <div class="u-form-send-error u-form-send-message">
-                            Unable to send your message. Please fix errors then try again.
+                            <button type="submit" class="u-border-2 u-border-black u-btn u-btn-submit u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1">Submit</button>
+                            <input type="submit" value="submit" class="u-form-control-hidden" />
                         </div>
                         <input type="hidden" value="" name="recaptchaResponse" />
-                        <input
-                            type="hidden"
-                            name="formServices"
-                            value="4df3e0cf-fad5-be81-c7b0-78d64b7df96e"
-                        />
+                        <input type="hidden" name="formServices" value="4df3e0cf-fad5-be81-c7b0-78d64b7df96e" />
+
+                        <p class="u-text u-success-message" style="color: green; margin-top: 10px; display: none;"></p>
+                        <p class="u-text u-error-message" style="color: red; margin-top: 10px; display: none;"></p>
                     </form>
-                    @if(session('success'))
-                        <p>{{ session('success') }}</p>
-                    @endif
+
+
+
+                    <script>
+                        $(document).ready(function() {
+                            $('#contactForm').submit(function(e) {
+                                e.preventDefault(); // Formun normal submit'ini engelle
+
+                                $.ajax({
+                                    type: 'POST',
+                                    url: $(this).attr('action'),
+                                    data: $(this).serialize(),
+                                    success: function(response) {
+                                        if (response.success) {
+                                            // Swal ile başarı mesajı göster
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Başarılı!',
+                                                text: response.message,
+                                                confirmButtonColor: '#3085d6',
+                                                confirmButtonText: 'Tamam'
+                                            });
+                                        } else {
+                                            // Swal ile hata mesajı göster
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Hata!',
+                                                text: response.message,
+                                                confirmButtonColor: '#d33',
+                                                confirmButtonText: 'Tamam'
+                                            });
+                                        }
+                                    },
+                                    error: function() {
+                                        // Ajax hatası durumunda Swal ile hata mesajı göster
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Bir hata oluştu!',
+                                            text: 'Lütfen tekrar deneyin.',
+                                            confirmButtonColor: '#d33',
+                                            confirmButtonText: 'Tamam'
+                                        });
+                                    }
+                                });
+                            });
+                        });
+
+
+
+
+                    </script>
+
+                    <!-- Başarı veya hata mesajı -->
+
+
+
                 </div>
-            </div>
-        </div>
+            </div>        </div>
         <img
             src="{{asset('./site2/images/wqe-min.jpg')}}"
             alt=""
@@ -667,6 +671,11 @@
             />
         </a>
     </div>
+
 </footer>
+
+
 </body>
 </html>
+
+

@@ -28,7 +28,7 @@ class AdminContactController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
 
-        // Mail gönderme
+
         try {
             // Mail gönderme işlemi
             Mail::to($toEmail)->send(new ContactFormMail($message));
@@ -40,14 +40,11 @@ class AdminContactController extends Controller
                 'message' => $message,
             ]);
 
-            // Başarı durumunda geri dönüş
-            return back()->with('success', 'Mesajınız başarıyla gönderildi!');
+            return response()->json(['success' => true, 'message' => 'Mesajınız başarıyla gönderildi!']);
         } catch (\Exception $e) {
-            // Hata durumunda geri dönüş
-            return back()->with('error', 'Mesaj gönderimi başarısız oldu, lütfen tekrar deneyin.');
+            // Hata mesajını JSON olarak döndürme
+            return response()->json(['success' => false, 'message' => 'Mesaj gönderimi başarısız oldu, lütfen tekrar deneyin.']);
         }
-
-
     }
 
 

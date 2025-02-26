@@ -19,12 +19,7 @@
                     <span>Anasayfa</span>
                 </a>
             </li>
-            <li>
-                <a class="nav-link" href="{{route('admin.about')}}">
-                    <i class="fas fa-user"></i>
-                    <span>Hakkımda</span>
-                </a>
-            </li>
+
             <li>
                 <a class="nav-link" href="{{route('admin.services')}}">
                     <i class="fas fa-guitar"></i>

@@ -274,9 +274,10 @@
                   </span>
                             <h4 class="u-text u-text-default u-text-1">Music Therapy</h4>
                             <p class="u-text u-text-2">
-                                Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                                ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                                tincidunt praesent semper feugiat nibh sed.
+                                Müzik, ruh ve beden sağlığı üzerinde derin etkiler yaratır.
+                                Müzik terapisi, stresi azaltmak, odaklanmayı artırmak ve
+                                duygusal iyileşmeyi desteklemek için kullanılan bilimsel bir
+                                yöntemdir.
                             </p>
                         </div>
                     </div>
@@ -293,9 +294,12 @@
                   </span>
                             <h4 class="u-text u-text-default u-text-3">Our Mission</h4>
                             <p class="u-text u-text-4">
-                                Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                                ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                                tincidunt praesent semper feugiat nibh sed.
+                                Online müzik eğitimi ile herkesin kaliteli müzik bilgisine
+                                ulaşmasını sağlamak en büyük hedefimizdir. Alanında uzman
+                                eğitmenler, interaktif dersler ve kapsamlı kaynaklarla,
+                                müzik öğrenmeyi herkes için kolay ve keyifli hale getirmeyi
+                                amaçlıyoruz. Sanatı erişilebilir kılmak ve müziğin birleştirici
+                                gücünü yaymak için buradayız.
                             </p>
                         </div>
                     </div>
@@ -312,9 +316,11 @@
                   </span>
                             <h4 class="u-text u-text-default u-text-5">Music Camps</h4>
                             <p class="u-text u-text-6">
-                                Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                                ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                                tincidunt praesent semper feugiat nibh sed.
+                                Müzik kampları, öğrencilerin hem pratik becerilerini geliştirdiği hem de
+                                farklı müzik tarzlarını deneyimlediği özel etkinliklerdir. Çevrim içi ve
+                                yüz yüze formatlarda düzenlenen kamplarımız sayesinde, yeni müzik aletleri
+                                çalmayı öğrenebilir, grup çalışmalarıyla sahne deneyimi kazanabilir ve profesyonel
+                                sanatçılardan eğitim alabilirsiniz.
                             </p>
                         </div>
                     </div>
@@ -331,9 +337,11 @@
                   </span>
                             <h4 class="u-text u-text-default u-text-7">Library</h4>
                             <p class="u-text u-text-8">
-                                Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                                ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                                tincidunt praesent semper feugiat nibh sed.
+                                Müzik dünyasına dair en güncel kaynakları,
+                                akademik makaleleri ve öğretici blog yazılarını keşfedin!
+                                Müziğin tarihi, teori dersleri, nota okumadan ses mühendisliğine
+                                kadar birçok konuda zengin içerikler sunan kütüphanemiz, müzik
+                                tutkunlarının gelişimini desteklemek için hazırlanmıştır.
                             </p>
                         </div>
                     </div>
@@ -348,11 +356,10 @@
 >
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-default u-text-palette-1-base u-text-1">
-            Music Education
+            🎵 Müzik Tutkunuzu Profesyonel Bir Yolculuğa Dönüştürün!
         </h2>
         <p class="u-text u-text-2">
-            The beauty of running is that it can be done in a variety of places,
-            by people of all abilities, at distances both short and long.
+            Enstrüman çalmayı öğrenmek artık daha kolay ve eğlenceli! Online müzik eğitim platformumuzda, gitar, piyano, nota okuma ve daha fazlası için uzman eğitmenlerle bir aradasınız. Canlı dersler, adım adım eğitim videoları ve kişiye özel programlarla müzik becerilerinizi geliştirin. İster evinizden, ister dünyanın herhangi bir yerinden… Müzik, sizinle anlam kazansın!
         </p>
         <div class="u-expanded-width u-list u-list-1">
             <div class="u-repeater u-repeater-1">
@@ -366,12 +373,17 @@
                         <h4
                             class="u-text u-text-default u-text-palette-1-base u-text-3"
                         >
-                            Students
+                            Öğrencilerimiz İçin
                         </h4>
                         <p class="u-text u-text-grey-50 u-text-4">
-                            Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                            ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                            tincidunt praesent semper feugiat nibh sed.
+                            🌟 Neden Binlerce Öğrenci Bizi Tercih Ediyor?
+
+                            "Hiç piyano çalmamıştım, şimdi ilk parçamı çalabiliyorum!"
+
+                            "Gitar dersleriyle hayalimdeki müzik tarzını keşfettim."
+
+                            "Esnek ders saatleri sayesinde iş ve müziği birleştirdim."
+                            Siz de başarı hikayemize ortak olun!
                         </p>
                     </div>
                 </div>
@@ -385,12 +397,17 @@
                         <h4
                             class="u-text u-text-default u-text-palette-1-base u-text-5"
                         >
-                            Programs
+                            Eğitim Programlarımız
                         </h4>
                         <p class="u-text u-text-grey-50 u-text-6">
-                            Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                            ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                            tincidunt praesent semper feugiat nibh sed.
+                            🎸 Her Seviyeye ve Enstrümana Özel Programlar
+
+                            Yeni Başlayanlar İçin: Temel akorlar, nota okuma, ritim çalışmaları.
+
+                            Orta Seviye: Teknik geliştirme, parça çalma, stil analizi.
+
+                            İleri Seviye: Profesyonel performans teknikleri, beste yapımı.
+                            Hangi enstrümanı seçerseniz seçin, sizin için bir yol haritası hazırladık!
                         </p>
                     </div>
                 </div>
@@ -404,12 +421,17 @@
                         <h4
                             class="u-text u-text-default u-text-palette-1-base u-text-7"
                         >
-                            Music
+                             Müzik ve Teknik
                         </h4>
                         <p class="u-text u-text-grey-50 u-text-8">
-                            Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                            ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                            tincidunt praesent semper feugiat nibh sed.
+                            📚 Müziğin Sırlarını Keşfedin
+
+                            Gitar Teli Nasıl Değiştirilir? Pratik ipuçları.
+
+                            Piyanoda Doğru Duruşun Önemi.
+
+                            Nota Okuma: Başlangıç Rehberi.
+                            Blogumuzda müzikle ilgili detaylı makaleler sizi bekliyor!
                         </p>
                     </div>
                 </div>
@@ -423,12 +445,18 @@
                         <h4
                             class="u-text u-text-default u-text-palette-1-base u-text-9"
                         >
-                            Psychology
+                            Müzik ve Motivasyon
+
                         </h4>
                         <p class="u-text u-text-grey-50 u-text-10">
-                            Justo nec ultrices dui sapien eget mi. Velit egestas dui id
-                            ornare arcu odio ut sem nulla. Fermentum posuere urna nec
-                            tincidunt praesent semper feugiat nibh sed.
+                            🧠 Müziğin Zihninize Katkıları
+
+                            Müzik yapmak stresi azaltır, odaklanmayı artırır.
+
+                            Enstrüman çalmak yaratıcı düşünme becerilerini geliştirir.
+
+                            Ritim ve melodi, duygusal dengeyi sağlar.
+                            "Müzik ruhun gıdasıdır" sözünü hayata geçirin!
                         </p>
                     </div>
                 </div>

@@ -24,7 +24,7 @@ class AdminContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        $toEmail = 'semihgms65@gmail.com';
+        $toEmail = 'serhat12522@gmail.com';
         $message = $request->input('message');
         $name = $request->input('name');
         $email = $request->input('email');

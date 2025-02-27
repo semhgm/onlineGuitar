@@ -793,7 +793,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
               </svg>
             </span>
             </a>
-            <a class="u-social-url" title="instagram" target="_blank" href="">
+            <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/serhatcohadar/">
             <span class="u-icon u-social-icon u-social-instagram u-icon-3">
               <svg
                   class="u-svg-link"

@@ -491,7 +491,7 @@
               </svg>
             </span>
             </a>
-            <a class="u-social-url" title="instagram" target="_blank" href="">
+            <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/serhatcohadar/">
             <span class="u-icon u-social-icon u-social-instagram u-icon-3">
               <svg
                   class="u-svg-link"

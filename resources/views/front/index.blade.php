@@ -66,7 +66,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
         <a href="#" class="u-image u-logo u-image-1">
             <img
-                src="{{asset('./site2/images/default-logo.png')}}"
+                src="{{asset('site2/images/default-logo.png')}}"
                 class="u-logo-image u-logo-image-1"
             />
         </a>

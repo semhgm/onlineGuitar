@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Artisan;
 
 class AdminBlogController extends Controller
 {
@@ -15,6 +16,11 @@ class AdminBlogController extends Controller
         $posts = Post::all(); // Tüm blog yazılarını al
         $message_count=Contact::count();
         return view('admin.pages.blog', compact('posts','message_count'));
+    }
+    public function clearCache()
+    {
+        Artisan::call('optimize:clear');
+        return "Cache başarıyla temizlendi!";
     }
     public function store(Request $request)
     {

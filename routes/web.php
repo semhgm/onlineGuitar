@@ -22,6 +22,7 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/clearCache', [AdminBlogController::class, 'clearCache']);
 
 //sayfalara yönlendiriyor
 Route::get('/', [PageController::class, 'index'])->name('index');

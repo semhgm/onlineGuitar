@@ -242,7 +242,8 @@
                         data-image-width="256"
                         data-image-height="256"
                     >
-                        <div class="u-container-layout u-container-layout-2"></div>
+                        <div class="u-container-layout u-container-layout-2" style="background-image: url('{{ asset('') }}');">
+                        </div>
                     </div>
                 </div>
             </div>

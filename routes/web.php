@@ -28,6 +28,7 @@ Route::get('/clearCache', [AdminBlogController::class, 'clearCache']);
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
+Route::get('/services_detail/{id}',[PageController::class,'services_detail'])->name('services_detail');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/blog/{id}', [PageController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/courses', [PageController::class, 'courses'])->name('courses');
@@ -84,8 +85,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 
 
-        // login page'e yönlendiriyor
-        Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
 
 
 
@@ -96,8 +97,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::put('/user/settings/update/{id}', [AdminUserController::class, 'update'])->name('admin.user.update');
         Route::delete('/user/settings/destroy/{id}', [AdminUserController::class, 'destroy'])->name('admin.user.destroy');
 
+        Route::put('/settings/update', [AdminDashboardController::class, 'update'])->name('admin.settings.update');
 
-    Route::put('/settings/update', [AdminDashboardController::class, 'update'])->name('admin.settings.update');
+    // login page'e yönlendiriyor
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 

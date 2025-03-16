@@ -93,4 +93,12 @@ class PageController extends Controller
         $FooterContent3=Page::find(13);
         return view('front.contact',compact('CallUs','Adress','BusinessHours','FooterContent1','FooterContent2','FooterContent3'));
     }
+    public function services_detail($id){
+        $service = Service::findOrFail($id);
+        $ProfessionalMusicEducation=Page::find(16);
+        $FooterContent1=Page::find(11);
+        $FooterContent2=Page::find(12);
+        $FooterContent3=Page::find(13);
+        return view('front.services_detail',compact('service','ProfessionalMusicEducation','FooterContent1','FooterContent2','FooterContent3'));
+    }
 }
